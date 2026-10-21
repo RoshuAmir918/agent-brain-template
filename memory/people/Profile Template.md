@@ -18,6 +18,14 @@ Copy this into `People/Verified_Name/Profile.md` and fill it with sourced facts.
 - **Relationship to the owner:** what is known, who stated it, date, confidence. Shared surnames do not establish kinship.
 - **Shared activities or projects:** brief, linked to the owning project notes.
 
+## Identifiers
+
+Every address, number or platform id that means this person, one per line, each with the date and source it was confirmed. The engine resolves who is speaking by matching these against the session, so an identifier that is not here cannot be matched.
+
+- Slack: U0XXXXXXX (confirmed <date>, <source>)
+- Email: name@example.com (confirmed <date>, <source>)
+- Phone: +1 555 000 0000 (confirmed <date>, <source>)
+
 ## Contact details
 
 For each route: channel and exact address or account ID; who supplied it (the owner, the person's account, or message headers); date and last check; the owner's account in that exchange, if known; preferred channel or style only when supported. A listed email is not proof of deliverability.

@@ -81,6 +81,7 @@ You should see `archive`, `attribution`, `sleep1`, `rem` and `sleep2` commits. O
 
 ## Living with it
 
+- **It knows who it is talking to.** Every session starts with the platform user id resolved to a profile: your friend's profile and the rules for what they may be told are in the prompt before the first reply, and a stranger is treated as one. Before each turn it also sees which notes match the message, so looking something up is a click, not a decision.
 - **Talk to it normally.** It looks things up before answering when a name, a project or a past decision is involved; the directory at the end of its session context tells it what exists. If it says it searched and found nothing, it means that.
 - **The morning briefing** is the one message a day it always sends: what moved, what it needs from you, what it noticed overnight, whether the night ran. Everything non-urgent waits for it.
 - **Tasks and promises.** Say "remind me when X" or "when the deploy lands, tell Y" and it becomes a trigger that never decays. Ask it for something and it becomes a task with your words as the source.
