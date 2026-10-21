@@ -34,6 +34,7 @@ The agent can do most of this itself from the bootstrap context file at the repo
    - `sessions.max_export_messages`: raise it so long sessions export whole.
    - `memory.write_approval: false`, `skills.write_approval: true`.
    - Your messaging platform's home channel set to your DM with the agent, so `--deliver` reaches you.
+   - Leave thread settings at their defaults (`thread_require_mention`, `ignore_other_user_mentions`): the agent follows threads it has joined, reads everything, and replies `[SILENT]` when a message is not for it, which Hermes honours for messages its adapter judges not addressed to the bot. If Hermes' short notice on plain thread follow-ups turns out to be noise, `thread_require_mention: true` is the fallback.
 5. Set `human_name` and `agent_name` in `brain.toml`; the digest labels turns with them. The same file holds the folder names, so the engine serves any layout.
 6. Create the cron jobs below. Create one first, run `hermes cron list`, and confirm the next-run time is in your timezone; the docs do not say which timezone a cron expression uses.
 7. Verify: `hermes skills list` shows the `brain-*` skills; a fresh session can quote the `.hermes.md` header; `hermes sessions stats` lists your platform after the first message.
