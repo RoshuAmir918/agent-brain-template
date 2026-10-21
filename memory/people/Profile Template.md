@@ -36,7 +36,7 @@ Dated, attributed facts that help the owner with this relationship. Keep the own
 
 ## History
 
-The Profile stays under 300 words and holds only what is stable. Every dated interaction, claim and request goes in `History.md` beside this file, newest first, one line each: `- YYYY-MM-DD, <channel>: <what they said or asked>; <how it went>.` Open commitments link to `agent/Tasks.md` or the owning hub. End the Profile with the link: [[<people dir>/<Name>/History|History]].
+The Profile stays under 300 words and holds only what is stable. Every dated interaction, claim and request goes in `History.md` beside this file, newest first, one line each: `- YYYY-MM-DD, <channel>: <what they said or asked>; <how it went>.` Open commitments link to `agent/Tasks.md` or the owning hub. End the Profile with a wikilink to that History note.
 
 ## Relevant unknowns
 
