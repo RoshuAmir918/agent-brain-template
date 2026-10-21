@@ -34,11 +34,9 @@ For each route: channel and exact address or account ID; who supplied it (the ow
 
 Dated, attributed facts that help the owner with this relationship. Keep the owner's statements, the person's self-report, observed events and inferences separate.
 
-## History and commitments
+## History
 
-- Link the few useful conversations. Create `Correspondence.md` only once it has real entries.
-- A history entry gives date, direction, channel, participants, purpose, source and status (draft, sent, received, replied, failed or unknown).
-- Link open commitments to [[memory/agent/Tasks|Tasks]] or the owning project hub.
+The Profile stays under 300 words and holds only what is stable. Every dated interaction, claim and request goes in `History.md` beside this file, newest first, one line each: `- YYYY-MM-DD, <channel>: <what they said or asked>; <how it went>.` Open commitments link to `agent/Tasks.md` or the owning hub. End the Profile with the link: [[<people dir>/<Name>/History|History]].
 
 ## Relevant unknowns
 
