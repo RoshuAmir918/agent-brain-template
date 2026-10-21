@@ -17,6 +17,10 @@ Short, source-backed profiles of the owner's friends, collaborators and other pe
 - Preserve the owner's edits. Profiles decay like any note and return through use.
 - Contact details are facts; credentials are never recorded.
 
+## Disclosure and groups
+
+What the agent may tell each person is `people/Disclosure.md`; audiences are people or groups under `people/Groups/`. A profile must record the platform user id before its person can be matched to a session.
+
 ## Rosters
 
 Owner-approved rosters (for outreach, for dreams) are listed here with the date and the owner's words. With none listed, there is no roster.

@@ -85,6 +85,7 @@ You should see `archive`, `attribution`, `sleep1`, `rem` and `sleep2` commits. O
 - **The morning briefing** is the one message a day it always sends: what moved, what it needs from you, what it noticed overnight, whether the night ran. Everything non-urgent waits for it.
 - **Tasks and promises.** Say "remind me when X" or "when the deploy lands, tell Y" and it becomes a trigger that never decays. Ask it for something and it becomes a task with your words as the source.
 - **People.** Mention someone and a profile starts; the daily people review keeps it sourced and revisable. The agent forms its own impressions and says so.
+- **Other people.** Anyone on your platform can message it. It resolves who is asking from the platform id, tells them nothing about you or anyone else unless a row in `memory/people/Disclosure.md` allows it, and logs what it declined for your morning briefing. Say "you can always share my schedule with close friends" and it writes the rule, scoped to the group, before it ever applies it.
 - **Other agents.** Tell it about another agent you run and it registers a profile: what the agent is for, how to reach it, what its reports are worth.
 - **Schedules.** Ask for a routine to move, pause or stop; it records the request, updates the table in `memory/hermes/README.md`, and applies it. It never changes a schedule on its own.
 
