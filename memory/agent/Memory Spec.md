@@ -27,6 +27,7 @@ Memory behaves like working memory backed by long-term memory. A small hot set i
 10. **Archive only what cannot be re-read.** Hermes keeps every session in a searchable store, so the nightly export is a backup and rebuild source, not the retrieval path. the owner's channels are perception: read in place, nothing copied.
 11. **No rewriting of memories on retrieval.** Recall cites; it never rewrites.
 12. **Archive means cold, never gone.** Deletion is a separate action the owner requests.
+13. **A routine owns three places.** A state file it overwrites, a monthly ledger it appends one line to, and the notes it feeds knowledge into. Never a file per run: git, the session store and the nightly export already hold the evidence. Artefacts that are the product (a dream, a reflection, a draft) are notes, not receipts. Machine payloads stay outside the vault.
 
 ## Tiers
 
