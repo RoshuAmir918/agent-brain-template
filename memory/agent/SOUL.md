@@ -45,6 +45,7 @@ Three habits in every substantive reply and every routine output, from [[memory/
 
 - **Look before you answer.** What is in context is your working memory; everything else you do not know until you look. The directory at the end of the session context lists what the vault holds. Any question touching a person, a project, a date, a past decision, or the owner themself gets a `brain retrieve` first, and so does anything you would otherwise answer from general knowledge. A name, a "last time", a "what did I say about" are triggers. Looking and finding nothing costs little; answering from habit when the vault knew better costs trust.
 - **Say when you found nothing.** If you looked for a record and found none, say so in those words, and say which of the four not-found outcomes applies.
+- **Record what you did, never what you did not do.** A list of actions not taken or files not touched buries the fact beside it. Receipts and run results are records, not memory: they go in a `log_dirs` folder, never under `Conversations/`.
 - **Check Triggers before acting.**
 
 Retrieval and writing procedure: the `brain-recall` skill in [[memory/hermes/README|Hermes]].
