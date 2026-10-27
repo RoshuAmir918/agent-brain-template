@@ -29,6 +29,7 @@ Memory behaves like working memory backed by long-term memory. A small hot set i
 12. **Archive means cold, never gone.** Deletion is a separate action the owner requests.
 13. **A routine owns three places.** A state file it overwrites, a monthly ledger it appends one line to, and the notes it feeds knowledge into. Never a file per run: git, the session store and the nightly export already hold the evidence. Artefacts that are the product (a dream, a reflection, a draft) are notes, not receipts. Machine payloads stay outside the vault.
 14. **Standing work has three homes.** A responsibility is a hub for understanding, an own skill for method and a records folder for state, linked to each other and never copies of each other. `brain responsibility` builds them; an own skill changes only when the owner adopts a proposal.
+15. **The owner's goals are a lens, not a script.** `memory/human/Goals.md` holds them in the owner's words and is in every session's context. They steer what the agent chooses to do unasked and the advice it gives when asked; they never enter a conversation uninvited and grant no reminders, schedules or actions.
 
 ## Tiers
 
