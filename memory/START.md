@@ -11,16 +11,16 @@ This vault is the long-term memory of the agent that owns it, and the shared con
 
 ## Session start
 
-Hermes injects `.hermes.md` from the repo root at startup. It is generated from this note, [[memory/CURRENT|CURRENT]], [[memory/agent/Triggers|Triggers]], the open tasks in [[memory/agent/Tasks|Tasks]], the automatic-load list in [[memory/Hot Set|Hot Set]], and a names-only directory of everything the vault holds. Any other agent reads those notes directly. The owning agent also reads [[memory/agent/SOUL|SOUL]], which Hermes loads as its identity file.
+Hermes injects `.hermes.md` from the repo root at startup. It is generated from this note, [[memory/CURRENT|CURRENT]], [[memory/human/Goals|Goals]], [[memory/agent/Triggers|Triggers]], the open tasks in [[memory/agent/Tasks|Tasks]], the automatic-load list in [[memory/Hot Set|Hot Set]], and a names-only directory of everything the vault holds. Any other agent reads those notes directly. The owning agent also reads [[memory/agent/SOUL|SOUL]], which Hermes loads as its identity file.
 
 ## Routing and ownership
 
 - **Now:** [[memory/CURRENT|CURRENT]] owns compact present context and dated uncertainties. [[memory/agent/Tasks|Tasks]] owns execution status, next steps, blockers and completion evidence.
-- **The owner:** [[memory/human/Profile|Profile]] owns durable background and preferences.
+- **The owner:** [[memory/human/Profile|Profile]] owns durable background and preferences. [[memory/human/Goals|Goals]] owns what they are trying to become, in their words: a lens for what the agent chooses to do, never raised uninvited.
 - **People:** [[memory/people/README|People]] owns concise, sourced profiles of the owner's friends and collaborators.
 - **Agents:** [[memory/agents/README|Agents]] owns the registry of the owner's other agents: purpose, reach, how to work with each, and what their reports are worth.
 - **The agent itself:** [[memory/agent/SOUL|SOUL]] owns identity and voice. [[memory/agent/Memory Spec|Memory Spec]] owns how memory works. [[memory/hermes/README|Hermes]] owns deployment, cron jobs and the skills that carry each routine.
-- **Topics:** one hub per project or area of life, at the root of `memory/`, created by the night when a durable topic appears. List them here as they appear.
+- **Topics:** one hub per project or area of life, at the root of `memory/`, created by the night when a durable topic appears. List them here as they appear. Standing work the agent holds is a responsibility: a hub with `skill:` and `records:` in its frontmatter, an own skill, and a records folder under the Hermes home; `brain responsibility` builds the three.
 - **Evidence:** `memory/Conversations/` holds dated records and, under `Sessions/` and `Digests/`, the nightly session export. Cold, never loaded whole. Search it or use session search.
 
 ## Retrieval

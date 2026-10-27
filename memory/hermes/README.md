@@ -86,7 +86,7 @@ Replace `slack` with your platform. Jobs that have nothing to say produce no mes
 | brain-midday, brain-evening | 12:00, 20:00 | register accuracy |
 | brain-explore | every two hours, daytime | own inbound plus one proactive thread |
 
-This table is the declared schedule. Sleep 2 compares it with `hermes cron list` every night and the morning briefing reports drift. The agent changes the schedule only when the owner asks, in conversation: it records the request, updates this table, and applies it. Delete what you do not want; add a routine by copying a skill and adding a line here.
+This table is the declared schedule. Sleep 2 compares it with `hermes cron list` every night and the morning briefing reports drift. The agent changes the schedule only when asked in conversation: by the owner for anything, or by a maintainer for the engine's routines (everything here except the briefing hour and routines the owner asked for by name). It records the request, updates this table, and applies it. Delete what you do not want; add a routine by copying a skill and adding a line here.
 
 ## Verifying a night
 
