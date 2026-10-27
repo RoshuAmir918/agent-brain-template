@@ -21,13 +21,14 @@ Memory behaves like working memory backed by long-term memory. A small hot set i
 4. **Freshness is ACT-R base-level activation.** One scalar per note from its use history, recomputed nightly. Tiers are thresholds on it.
 5. **Retrieval is a deterministic tool plus judgment.** `brain retrieve` scores index lines, spreads one hop over wikilinks and greps cold bodies; the model chooses what to load.
 6. **Writing is surprise-gated.** A fact already predictable from memory gets a use, not a copy.
-7. **Memory work has owners.** Sleep 1 owns consolidation, activation, tiers and the generated views. Sleep 2 owns audits, index-line and link repairs, reflections and priming. People review owns profiles. REM owns dreams. Day routines edit only task state, dated items and triggers; the explore pass may also file surprise-gated facts in the owning hub or profile, with source and date.
+7. **Memory work has owners.** Sleep 1 owns consolidation, activation, tiers and the generated views. Sleep 2 owns audits, index-line and link repairs, reflections and priming. People review owns profiles. REM owns dreams. Day routines edit only task state, dated items and triggers; the explore pass may also file surprise-gated facts in the owning hub or profile, with source and date. Improve owns the Improvements section of each responsibility hub and proposes; the owner adopts.
 8. **Reflections, triggers and dreams are memory types.** Reflections are cited inferences. Triggers are "when X, do Y." Dreams are fiction that can only enter memory through a reflection.
 9. **Open commitments never close by decay; pinned notes never fade.** A quiet task loads smaller; it never stops being owed.
 10. **Archive only what cannot be re-read.** Hermes keeps every session in a searchable store, so the nightly export is a backup and rebuild source, not the retrieval path. the owner's channels are perception: read in place, nothing copied.
 11. **No rewriting of memories on retrieval.** Recall cites; it never rewrites.
 12. **Archive means cold, never gone.** Deletion is a separate action the owner requests.
 13. **A routine owns three places.** A state file it overwrites, a monthly ledger it appends one line to, and the notes it feeds knowledge into. Never a file per run: git, the session store and the nightly export already hold the evidence. Artefacts that are the product (a dream, a reflection, a draft) are notes, not receipts. Machine payloads stay outside the vault.
+14. **Standing work has three homes.** A responsibility is a hub for understanding, an own skill for method and a records folder for state, linked to each other and never copies of each other. `brain responsibility` builds them; an own skill changes only when the owner adopts a proposal.
 
 ## Tiers
 

@@ -97,7 +97,7 @@ Nothing to do. The nightly export job runs `brain update` first, which upgrades 
 ## Make it yours
 
 - **Voice.** Edit `memory/agent/SOUL.md`. The refresh script copies it into Hermes within the hour.
-- **Routines come in two kinds.** Attribute, Sleep 1, Sleep 2, REM and recall are the memory mechanism: the engine owns them and re-renders them on every refresh. To change one, fork `agent-brain`, change it there, and point `update_source` at your fork. Morning, watch, midday, evening, people and explore are defaults: written once on install, then yours. Edit them in `memory/hermes/skills/`, or delete the folder and its cron line. Add your own skill the same way.
+- **Routines come in two kinds.** Attribute, Sleep 1, Sleep 2, REM, Improve and recall are the memory mechanism: the engine owns them and re-renders them on every refresh. To change one, fork `agent-brain`, change it there, and point `update_source` at your fork. Morning, watch, midday, evening, people and explore are defaults: written once on install, then yours. Edit them in `memory/hermes/skills/`, or delete the folder and its cron line. Add your own skill the same way.
 - **Your existing notes.** Put them in `sources/`, or symlink your Obsidian vault there. The agent reads them and never edits them.
 - **Obsidian.** Open the repo as a vault. The wikilinks and graph work as-is.
 - **Folder names.** `brain.toml` maps the engine to this layout. You can rename the folders if you update it, but there is no reason to.

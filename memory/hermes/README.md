@@ -59,6 +59,7 @@ hermes cron create "30 1 * * *" "Run attribution for yesterday."       --skill b
 hermes cron create "30 2 * * *" "Run Sleep 1 for yesterday."           --skill brain-sleep1    --workdir $V --deliver local --name sleep1
 hermes cron create "30 3 * * *" "Run REM."                             --skill brain-rem       --workdir $V --deliver local --name rem
 hermes cron create "0 4 * * *"  "Run Sleep 2."                         --skill brain-sleep2    --workdir $V --deliver local --name sleep2
+hermes cron create "0 7 * * *"  "Run Improve."                         --skill brain-improve   --workdir $V --deliver local --name improve
 hermes cron create "0 6 * * *"  "Run the People review."               --skill brain-people    --workdir $V --deliver local --name people
 hermes cron create "0 8 * * *"  "Run the morning briefing."            --skill brain-morning   --workdir $V --deliver slack --name morning
 hermes cron create "0 12 * * *" "Run the midday review."               --skill brain-midday    --workdir $V --deliver slack --name midday
@@ -79,6 +80,7 @@ Replace `slack` with your platform. Jobs that have nothing to say produce no mes
 | brain-rem | 03:30 | one dream |
 | brain-sleep2 | 04:00 | retrieval audit, reflections, the morning agenda |
 | brain-people | 06:00 | profiles |
+| brain-improve | 07:00 | one responsibility studied as a practitioner; candidate responsibilities from yesterday |
 | brain-morning | 08:00 | the briefing |
 | brain-watch | hourly | urgent items from the last hour |
 | brain-midday, brain-evening | 12:00, 20:00 | register accuracy |
