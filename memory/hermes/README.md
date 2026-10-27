@@ -35,8 +35,8 @@ The agent can do most of this itself from the bootstrap context file at the repo
    - `memory.write_approval: false`, `skills.write_approval: true`.
    - Your messaging platform's home channel set to your DM with the agent, so `--deliver` reaches you.
    - Leave thread settings at their defaults (`thread_require_mention`, `ignore_other_user_mentions`): the agent follows threads it has joined, reads everything, and replies `[SILENT]` when a message is not for it, which Hermes honours for messages its adapter judges not addressed to the bot. If Hermes' short notice on plain thread follow-ups turns out to be noise, `thread_require_mention: true` is the fallback.
-5. Set `human_name` and `agent_name` in `brain.toml`; the digest labels turns with them. The same file holds the folder names, so the engine serves any layout.
-6. Create the cron jobs below. Create one first, run `hermes cron list`, and confirm the next-run time is in your timezone; the docs do not say which timezone a cron expression uses.
+5. Fill `brain.toml` before the first night: `human_name` and `agent_name` (the digest labels turns with them), `owner_user_ids` (the owner's platform ids), `maintainers` (whoever installed this and any agent that checks on it), and `timezone` (the owner's zone, not the host's: the export's "yesterday" and every date in the vault follow it). The same file holds the folder names, so the engine serves any layout. Nothing here is "verified later" by the agent; an agent that cannot see its owner's id or zone writes itself holds instead.
+6. Create every cron job below, active, with an explicit delivery channel on the day jobs. Create one first, run `hermes cron list`, and confirm the next-run time is in your timezone; the docs do not say which timezone a cron expression uses. Do not create delivery jobs paused "until the owner confirms": the owner adjusts hours in their first conversation, and a paused job is a hold nobody remembers to lift.
 7. Verify: `hermes skills list` shows the `brain-*` skills; a fresh session can quote the `.hermes.md` header; `hermes sessions stats` lists your platform after the first message.
 
 ## Session export
