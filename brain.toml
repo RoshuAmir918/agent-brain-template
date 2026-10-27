@@ -13,4 +13,3 @@ update_source = "git+https://github.com/RoshuAmir918/agent-brain"   # "" disable
 owner_user_ids = []   # your own platform user ids, e.g. a Slack "U..." id; the provider treats these sessions as the owner
 log_dirs = []   # folders under agent_dir holding receipts, ledgers or results; records, never notes
 maintainers = []   # platform user ids of whoever keeps this brain running without owning it; they get the health report, never the owner's context
-maintainer_access = "metrics"   # "metrics": health and audit numbers only; "process": ledgers, skills and the cron table too. Only the owner changes it
