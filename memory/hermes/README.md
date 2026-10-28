@@ -33,9 +33,9 @@ The agent can do most of this itself from the bootstrap context file at the repo
    - `sessions.auto_prune: false`, or a retention well past 90 days. Nothing is deleted before export.
    - `sessions.max_export_messages`: raise it so long sessions export whole.
    - `memory.write_approval: false`, `skills.write_approval: true`.
-   - `DEMIURGE_HOME_CHANNEL` in the Hermes profile's `.env` set to your Demiurge home conversation with the agent, so `--deliver demiurge` reaches your Home (see Destinations in `memory/agent/Channels.md`).
+   - Your platform's home channel in the Hermes profile's `.env` (each platform names its own variable), so `--deliver <platform>` reaches your Home (see Destinations in `memory/agent/Channels.md`).
 5. Fill `brain.toml` before the first night: `human_name` and `agent_name` (the digest labels turns with them), `owner_user_ids` (the owner's platform ids), `maintainers` (whoever installed this and any agent that checks on it), and `timezone` (the owner's zone, not the host's: the export's "yesterday" and every date in the vault follow it). The same file holds the folder names, so the engine serves any layout. Nothing here is "verified later" by the agent; an agent that cannot see its owner's id or zone writes itself holds instead.
-6. Create every cron job below, active, with explicit delivery to Home (`--deliver demiurge`) on the day jobs. Create one first, run `hermes cron list`, and confirm the next-run time is in your timezone; the docs do not say which timezone a cron expression uses. Do not create delivery jobs paused "until the owner confirms": the owner adjusts hours in their first conversation, and a paused job is a hold nobody remembers to lift.
+6. Create every cron job below, active, with explicit delivery to Home (`--deliver $P`) on the day jobs. Create one first, run `hermes cron list`, and confirm the next-run time is in your timezone; the docs do not say which timezone a cron expression uses. Do not create delivery jobs paused "until the owner confirms": the owner adjusts hours in their first conversation, and a paused job is a hold nobody remembers to lift.
 7. Verify: `hermes skills list` shows the `brain-*` skills; a fresh session can quote the `.hermes.md` header; `hermes sessions stats` lists your platform after the first message.
 
 ## Session export
@@ -52,6 +52,7 @@ Schedule and prompt are positional; `--skill` attaches the skill; `--workdir` is
 
 ```sh
 V=$VAULT_REPO
+P=<platform>   # the platform you talk to your agent on
 hermes cron create "30 0 * * *" --no-agent --script export-sessions.sh --deliver local --name session-export
 hermes cron create "15 * * * *" --no-agent --script refresh.sh          --deliver local --name context-refresh
 hermes cron create "30 1 * * *" "Run attribution for yesterday."       --skill brain-attribute --workdir $V --deliver local --name attribution
@@ -60,14 +61,14 @@ hermes cron create "30 3 * * *" "Run REM."                             --skill b
 hermes cron create "0 4 * * *"  "Run Sleep 2."                         --skill brain-sleep2    --workdir $V --deliver local --name sleep2
 hermes cron create "0 7 * * *"  "Run Improve."                         --skill brain-improve   --workdir $V --deliver local --name improve
 hermes cron create "0 6 * * *"  "Run the People review."               --skill brain-people    --workdir $V --deliver local --name people
-hermes cron create "0 8 * * *"  "Run the morning briefing."            --skill brain-morning   --workdir $V --deliver demiurge --name morning
-hermes cron create "0 12 * * *" "Run the midday review."               --skill brain-midday    --workdir $V --deliver demiurge --name midday
-hermes cron create "0 20 * * *" "Run the evening review."              --skill brain-evening   --workdir $V --deliver demiurge --name evening
-hermes cron create "0 * * * *"  "Run the watch guard."                 --skill brain-watch     --workdir $V --deliver demiurge --name watch
-hermes cron create "30 8-22/2 * * *" "Run the explore pass."           --skill brain-explore   --workdir $V --deliver demiurge --name explore
+hermes cron create "0 8 * * *"  "Run the morning briefing."            --skill brain-morning   --workdir $V --deliver $P --name morning
+hermes cron create "0 12 * * *" "Run the midday review."               --skill brain-midday    --workdir $V --deliver $P --name midday
+hermes cron create "0 20 * * *" "Run the evening review."              --skill brain-evening   --workdir $V --deliver $P --name evening
+hermes cron create "0 * * * *"  "Run the watch guard."                 --skill brain-watch     --workdir $V --deliver $P --name watch
+hermes cron create "30 8-22/2 * * *" "Run the explore pass."           --skill brain-explore   --workdir $V --deliver $P --name explore
 ```
 
-`--deliver demiurge` sends to Home, the conversation in `DEMIURGE_HOME_CHANNEL`; on another platform, use its name and set its home channel instead. Jobs that have nothing to say produce no message; the skills say so, because delivery sends whatever the job outputs. Hermes disables cron management inside cron runs, so a skill cannot schedule more jobs.
+`--deliver $P` sends to Home, the platform's home channel. Jobs that have nothing to say produce no message; the skills say so, because delivery sends whatever the job outputs. Hermes disables cron management inside cron runs, so a skill cannot schedule more jobs.
 
 ## The routines
 
