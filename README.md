@@ -28,7 +28,7 @@ You need:
   curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash
   hermes setup          # provider and API key; interactive
   ```
-  If you want to talk to your agent from Slack, Telegram or Discord, also run `hermes gateway setup` and connect the platform. You can add this later; the vault works from the terminal alone.
+  If you want to talk to your agent from Demiurge (or Slack, Telegram or Discord), also run `hermes gateway setup` and connect the platform. You can add this later; the vault works from the terminal alone.
 
 Everything the agent learns about you goes into this repo, in plain text. Keep it private. Never put passwords, tokens or recovery codes in it; the agent is told never to read them, but the safer rule is that they are never there.
 

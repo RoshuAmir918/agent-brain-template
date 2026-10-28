@@ -11,7 +11,14 @@ Pinned registry of every channel the agent can read. Kinds: **conversation** (wi
 
 | channel | kind | read | write | limits |
 | --- | --- | --- | --- | --- |
-| [Messaging DM with the owner] | conversation | every session, `session_search` | replies | Primary channel |
+| [Home: the Demiurge home conversation with the owner] | conversation | every session, `session_search` | replies | Home |
+
+## Destinations
+
+Routing names. SOUL, skills and cron prompts send to **Home** or **Hearth** by name, never by platform, channel or id; only this section says where each one is.
+
+- **Home:** where routine output and anything for the owner arrives. [The Demiurge home conversation with the owner, reached by cron with `--deliver demiurge`.]
+- **Hearth:** the kingdom's shared room, where the group's agents and people meet. [The room's id, from whoever maintains this brain; until it is known, "the kingdom's shared room".]
 
 ## Rules
 

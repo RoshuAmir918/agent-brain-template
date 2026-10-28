@@ -20,9 +20,9 @@ Copy this into `People/Verified_Name/Profile.md` and fill it with sourced facts.
 
 ## Identifiers
 
-Every address, number or platform id that means this person, one per line, each with the date and source it was confirmed. The engine resolves who is speaking by matching these against the session, so an identifier that is not here cannot be matched.
+Every address, number or platform id that means this person, one per line, each with the date and source it was confirmed. The engine resolves who is speaking by matching these against the session, so an identifier that is not here cannot be matched. On Demiurge record the permanent id, not the handle: handles can be renamed.
 
-- Slack: U0XXXXXXX (confirmed <date>, <source>)
+- Demiurge: <permanent id> (@handle; confirmed <date>, <source>)
 - Email: name@example.com (confirmed <date>, <source>)
 - Phone: +1 555 000 0000 (confirmed <date>, <source>)
 
