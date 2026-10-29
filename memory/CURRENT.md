@@ -15,6 +15,10 @@ Current work and dated pointers. [[memory/agent/Tasks]] owns execution. [[memory
 <!-- generated nightly from the open-task register; edits here are overwritten -->
 <!-- brain:active-threads end -->
 
+## Needs you
+
+What only the owner can decide (`ask`), and what the agent went ahead with that they may want to correct (`confirm`, closed as accepted after seven days). One line each: `- <date> · ask · <question> · [[source]]`. Waiting tasks and proposed improvements are listed with these by `brain needs-you`.
+
 ## Owner waits and paused work
 
 None yet.

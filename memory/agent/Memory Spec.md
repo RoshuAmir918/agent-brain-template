@@ -27,7 +27,7 @@ Memory behaves like working memory backed by long-term memory. A small hot set i
 10. **Archive only what cannot be re-read.** Hermes keeps every session in a searchable store, so the nightly export is a backup and rebuild source, not the retrieval path. the owner's channels are perception: read in place, nothing copied.
 11. **No rewriting of memories on retrieval.** Recall cites; it never rewrites.
 12. **Archive means cold, never gone.** Deletion is a separate action the owner requests.
-13. **A routine owns three places.** A state file it overwrites, a monthly ledger it appends one line to, and the notes it feeds knowledge into. Never a file per run: git, the session store and the nightly export already hold the evidence. Artefacts that are the product (a dream, a reflection, a draft) are notes, not receipts. Machine payloads stay outside the vault.
+13. **A routine owns three places.** A state file it overwrites, a monthly ledger the engine appends one structured row to after each run, and the notes it feeds knowledge into. Never a file per run: git, the session store and the nightly export already hold the evidence. Artefacts that are the product (a dream, a reflection, a draft) are notes, not receipts. Machine payloads stay outside the vault.
 14. **Standing work has three homes.** A responsibility is a hub for understanding, an own skill for method and a records folder for state, linked to each other and never copies of each other. `brain responsibility` builds them; an own skill changes only when the owner adopts a proposal.
 15. **The owner's goals are a lens, not a script.** `memory/human/Goals.md` holds them in the owner's words and is in every session's context. They steer what the agent chooses to do unasked and the advice it gives when asked; they never enter a conversation uninvited and grant no reminders, schedules or actions.
 
@@ -50,12 +50,12 @@ pinned: false          # true forces hot and exempts from decay
 activation: -1.2       # computed nightly
 uses: [2026-10-05]     # dates cited, newest first, last 30 kept
 uses_inferred: []      # half weight
-kind: hub              # hub | profile | episode | reflection | task | trigger | log | dream | orientation
+kind: hub              # hub | profile | episode | reflection | task | trigger | log | dream | orientation | primed | draft | conversation | procedure
 index_line: ""         # optional; Sleep 2 sets it when the first line misleads retrieval
 ---
 ```
 
-Tasks keep `T-nnn` identities and their state, owner, next action, blocker and completion fields. Corrections carry `supersedes` and stay pinned until the superseded note goes cold; the old claim keeps its text under a "superseded by" line. Reflections carry `sources:` and `confidence: tentative | supported`. Dreams carry `fiction: true` and `ingredients:`, are born cold, and are reachable only by spreading activation from an ingredient.
+Tasks keep `T-nnn` identities and their state, owner, next action, blocker and completion fields. The state is machine-readable in the task's brain comment (`state=ready | in_progress | blocked | waiting_for_owner | completed | cancelled`); a task names the hub it serves with `**Hub:**`, which gives a plan its progress. Corrections carry `supersedes` and stay pinned until the superseded note goes cold; the old claim keeps its text under a "superseded by" line. Reflections carry `sources:` and `confidence: tentative | supported`. Dreams carry `fiction: true` and `ingredients:`, are born cold, and are reachable only by spreading activation from an ingredient.
 
 ## What counts as a use
 
