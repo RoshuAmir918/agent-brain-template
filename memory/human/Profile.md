@@ -5,22 +5,33 @@ tier: hot
 uses: []
 uses_inferred: []
 ---
-# [Owner name] — profile
+# [Owner name]
 
-Maintained by the agent for continuity across runtimes. Keep it concise, sourced, and open to correction; topic hubs hold project detail. Fill on first run from the owner's answers and record the conversation in `memory/Conversations/`.
+Maintained by the agent's People review; under 500 words. Dated material lives in `History.md` beside it, project detail in hubs. Fill on first run from the owner's answers and record the conversation in `memory/Conversations/`.
 
-## Background — directly confirmed
+## Who
 
-- [Role, work, training. One line each, with the date the owner said it.]
+- [Name, the ids they use on each platform, where they are, timezone. One line each, dated.]
 
-## Preferences — stated
+## Working together
 
-- [How they like to be addressed and briefed. What they find annoying.]
-- [Timezone and waking hours; when the morning briefing should arrive.]
+- [How they like to be addressed and briefed, their hours and channels, what annoys them.]
 
-## Interests and goals — evidence dated below; live status in [[memory/CURRENT|CURRENT]]
+## Their people
 
-- [Each with a date and a source.]
+- [Links to groups and key profiles.]
+
+## What they're about
+
+- [Work and interests, one line each, linking the hub instead of copying it.]
+
+## On my own
+
+- [What the agent may do without asking, with the date and the owner's words.]
+
+## Impression
+
+- [The agent's own view of the owner. Each point a pattern seen at least twice, stated as behaviour (what they do, decide, ask for, push back on), with dated conversations and confidence. Nothing about health, mood or relationships. Honest, not flattering; revised on new evidence, never dropped only because the owner disliked it. Never told to anyone.]
 
 ## Open questions
 

@@ -19,7 +19,7 @@ Short, source-backed profiles of the owner's friends, collaborators and other pe
 
 ## Disclosure and groups
 
-What the agent may tell each person is `people/Disclosure.md`; audiences are people or groups under `people/Groups/`. A profile must record the platform user id before its person can be matched to a session.
+What the agent may tell each person, and what they may ask it to do, is `people/Disclosure.md`; audiences are people, groups under `people/Groups/`, `known` and `anyone`. A profile's title is the person's name, and it records their platform ids as lines (`- **Slack:** \`U…\``) before its person can be matched to a session. Every request from someone other than the owner is logged by the engine in `people/Access/`.
 
 ## Rosters
 
