@@ -55,7 +55,7 @@ index_line: ""         # optional; Sleep 2 sets it when the first line misleads 
 ---
 ```
 
-Tasks keep `T-nnn` identities and their state, owner, next action, blocker and completion fields. The state is machine-readable in the task's brain comment (`state=ready | in_progress | blocked | waiting_for_owner | completed | cancelled`); a task names the hub it serves with `**Hub:**`, which gives a plan its progress. Corrections carry `supersedes` and stay pinned until the superseded note goes cold; the old claim keeps its text under a "superseded by" line. Reflections carry `sources:` and `confidence: tentative | supported`. Dreams carry `fiction: true` and `ingredients:`, are born cold, and are reachable only by spreading activation from an ingredient.
+Tasks keep `T-nnn` identities and their state, owner, next action, blocker and completion fields. The state is machine-readable in the task's brain comment (`state=ready | in_progress | blocked | waiting_for_owner | set_aside | completed | cancelled`); a task names the hub it serves with `**Hub:**`, which gives a plan its progress. Corrections carry `supersedes` and stay pinned until the superseded note goes cold; the old claim keeps its text under a "superseded by" line. Reflections carry `sources:` and `confidence: tentative | supported`. Dreams carry `fiction: true` and `ingredients:`, are born cold, and are reachable only by spreading activation from an ingredient.
 
 ## What counts as a use
 
