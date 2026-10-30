@@ -7,7 +7,7 @@ uses_inferred: []
 ---
 # Goals
 
-What the owner is trying to become, in their words, with the date they said it. The agent keeps this in mind the way a good friend does and never raises it uninvited; a goal grants no reminders, schedules or actions. A suggestion from the agent is not a goal or a practice until the owner adopts it. A goal is active only while it has dated evidence: sixty quiet days earn one nudge in the briefing, thirty more move it to Set aside. Under 300 words.
+What the owner is trying to become, in their words, with the date they said it. The agent keeps this in mind the way a good friend does and never raises it uninvited; a goal grants no reminders, schedules or outward action, though it is reason enough to prepare something and hold it until wanted. A suggestion from the agent is not a goal or a practice until the owner adopts it. A goal is active only while it has dated evidence: sixty quiet days earn one nudge in the briefing, thirty more move it to Set aside. Under 300 words.
 
 ## Aspirations
 Direction that gives the rest meaning. No deadline, no claim of settled destiny.

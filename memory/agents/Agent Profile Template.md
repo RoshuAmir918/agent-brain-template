@@ -20,7 +20,10 @@ uses_inferred: []
 ---
 # <Name>
 
-**Purpose.** What it is for, in one sentence, in the owner's words if he gave them. Date and source.
+- **Owner:** [[memory/people/<Owner>/Profile|<Owner>]] (whose intellect it is; the engine reads this line to resolve what it may be told, so keep it as a wikilink or a bare name)
+- **Demiurge:** `<id>` (one id line per platform; the engine recognises the sender from these)
+
+**Purpose.** What it is for, in one sentence, in the owner's words if they gave them. Date and source.
 
 **Runtime and reach.** Where it runs, what it can touch (repos, accounts, services), what it cannot. Where its access is configured, not the access itself.
 

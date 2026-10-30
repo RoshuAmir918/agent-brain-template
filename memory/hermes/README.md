@@ -79,16 +79,16 @@ hermes cron create "30 8-22/2 * * *" "Run the explore pass."           --skill b
 | brain-attribute | 01:30 | which notes yesterday's replies relied on |
 | brain-sleep1 | 02:30 | consolidating yesterday into memory, tidying hubs, running the script |
 | brain-rem | 03:30 | one dream |
-| brain-sleep2 | 04:00 | retrieval audit, reflections, the morning agenda |
+| brain-sleep2 | 04:00 | retrieval audit, reflections, today for the owner (Primed), the weekly service pass |
 | brain-people | 06:00 | profiles |
 | brain-improve | 07:00 | one responsibility studied as a practitioner; candidate responsibilities from yesterday |
-| brain-morning | 08:00 | the briefing |
+| brain-morning | 08:00 | the briefing: today for the owner, done for them, what needs them |
 | brain-watch | hourly | urgent items from the last hour |
 | brain-midday, brain-evening | 12:00, 20:00 | register accuracy |
-| brain-explore | every two hours, daytime | own inbound plus one proactive thread |
+| brain-explore | every two hours, daytime | own inbound, then one thing for the owner: work, a person's week or an occasion; most runs nothing |
 
-This table is the declared schedule. Sleep 2 compares it with `hermes cron list` every night and the morning briefing reports drift. The agent changes the schedule only when asked in conversation: by the owner for anything, or by a maintainer for the engine's routines (everything here except the briefing hour and routines the owner asked for by name). It records the request, updates this table, and applies it. Delete what you do not want; add a routine by copying a skill and adding a line here.
+This table is the declared schedule. Sleep 2 compares it with `hermes cron list` every night and records drift in the Sleep Log. The agent changes the schedule only when asked in conversation: by the owner for anything, or by a maintainer for the engine's routines (everything here except the briefing hour and routines the owner asked for by name). It records the request, updates this table, and applies it. Delete what you do not want; add a routine by copying a skill and adding a line here.
 
 ## Verifying a night
 
-`git log --oneline --since=yesterday` should show `archive`, `attribution`, `sleep1`, `rem` and `sleep2` commits for the date, plus `context` commits whenever a source note changed. The morning skill reports any missing stage. After the first night, open `Conversations/Digests/<date>.md` and check that the agent's turns carry `reads:` lines; if they are empty, the tool-call field names the parser assumes (see `docs/engine.md` in the engine repo) differ from your Hermes version.
+`git log --oneline --since=yesterday` should show `archive`, `attribution`, `sleep1`, `rem` and `sleep2` commits for the date, plus `context` commits whenever a source note changed. `brain health` reports a missing stage; the briefing mentions one only when it affects today. After the first night, open `Conversations/Digests/<date>.md` and check that the agent's turns carry `reads:` lines; if they are empty, the tool-call field names the parser assumes (see `docs/engine.md` in the engine repo) differ from your Hermes version.

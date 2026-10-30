@@ -16,6 +16,7 @@ Maintained by the agent's People review; under 500 words. Dated material lives i
 ## Working together
 
 - [How they like to be addressed and briefed, their hours and channels, what annoys them.]
+- [Their corrections to the agent's style, format, scope and tone, one dated line each, duplicates merged. Under 150 words for the section; it overrides the skills' defaults.]
 
 ## Their people
 

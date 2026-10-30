@@ -11,11 +11,11 @@ This vault is the long-term memory of the agent that owns it, and the shared con
 
 ## Session start
 
-Hermes injects `.hermes.md` from the repo root at startup. It is generated from this note, [[memory/CURRENT|CURRENT]], [[memory/human/Goals|Goals]], [[memory/agent/Triggers|Triggers]], the open tasks in [[memory/agent/Tasks|Tasks]], the automatic-load list in [[memory/Hot Set|Hot Set]], and a names-only directory of everything the vault holds. Any other agent reads those notes directly. The owning agent also reads [[memory/agent/SOUL|SOUL]], which Hermes loads as its identity file.
+Hermes injects `.hermes.md` from the repo root at startup. It is generated from this note, [[memory/CURRENT|CURRENT]], `agent/Primed.md` (today for the owner, written by the night), [[memory/human/Goals|Goals]], [[memory/agent/Triggers|Triggers]], an Upcoming list of dates named in the vault for the next seven days, the open tasks in [[memory/agent/Tasks|Tasks]], the automatic-load list in [[memory/Hot Set|Hot Set]], and a names-only directory of everything the vault holds. Any other agent reads those notes directly. The owning agent also reads [[memory/agent/SOUL|SOUL]], which Hermes loads as its identity file.
 
 ## Routing and ownership
 
-- **Now:** [[memory/CURRENT|CURRENT]] owns compact present context and dated uncertainties. [[memory/agent/Tasks|Tasks]] owns execution status, next steps, blockers and completion evidence.
+- **Now:** [[memory/CURRENT|CURRENT]] owns compact present context and dated uncertainties. [[memory/agent/Tasks|Tasks]] owns execution status, next steps, blockers and completion evidence. `agent/Prepared/` holds things made or drafted for the owner and held until wanted.
 - **The owner:** [[memory/human/Profile|Profile]] owns durable background and preferences. [[memory/human/Goals|Goals]] owns what they are trying to become, in their words: a lens for what the agent chooses to do, never raised uninvited.
 - **People:** [[memory/people/README|People]] owns concise, sourced profiles of the owner's friends and collaborators.
 - **Agents:** [[memory/agents/README|Agents]] owns the registry of the owner's other agents: purpose, reach, how to work with each, and what their reports are worth.

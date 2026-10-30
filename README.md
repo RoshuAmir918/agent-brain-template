@@ -12,7 +12,7 @@ It follows the [LLM wiki](https://gist.github.com/karpathy/442a6bf555914893e9891
 - **Only surprises get written.** A fact the vault already states earns a use, not a copy. A correction from you supersedes in place. A conflicting third-party claim is kept beside the original and raised in the morning.
 - **Commitments that never decay.** "When X, do Y" lives in a pinned Triggers note and fires when the world matches it, however old.
 - **A night that does the housekeeping.** Export, attribute, consolidate, dream, audit. Each stage is one git commit, so `git log` tells you whether it ran and `git revert` undoes it.
-- **A day of routines you can keep or delete.** Morning briefing, hourly watch, midday and evening register checks, a daily people review, and a proactive explore pass that picks one thread from your recent conversations and pushes it forward.
+- **A day of routines you can keep or delete.** Morning briefing, hourly watch, midday and evening register checks, a daily people review, and an explore pass that asks, every two hours, what it could do for you today: work, a person in your week, or something you'd enjoy, prepared and held until it comes up, and most runs nothing.
 - **Registries for people and for your other agents.** One sourced profile each, decaying like any note.
 - **Self-updating.** The engine upgrades itself every night. When an upgrade needs something changed in your notes, it leaves a prompt and your agent carries it out.
 

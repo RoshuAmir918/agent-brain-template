@@ -21,7 +21,7 @@ Memory behaves like working memory backed by long-term memory. A small hot set i
 4. **Freshness is ACT-R base-level activation.** One scalar per note from its use history, recomputed nightly. Tiers are thresholds on it.
 5. **Retrieval is a deterministic tool plus judgment.** `brain retrieve` scores index lines, spreads one hop over wikilinks and greps cold bodies; the model chooses what to load.
 6. **Writing is surprise-gated.** A fact already predictable from memory gets a use, not a copy.
-7. **Memory work has owners.** Sleep 1 owns consolidation, activation, tiers and the generated views. Sleep 2 owns audits, index-line and link repairs, reflections and priming. People review owns profiles. REM owns dreams. Day routines edit only task state, dated items and triggers; the explore pass may also file surprise-gated facts in the owning hub or profile, with source and date. Improve owns the Improvements section of each responsibility hub and proposes; the owner adopts.
+7. **Memory work has owners.** Sleep 1 owns consolidation, activation, tiers and the generated views. Sleep 2 owns audits, index-line and link repairs, reflections and priming. People review owns profiles. REM owns dreams. Day routines edit only task state, dated items and triggers; the explore pass may also file surprise-gated facts in the owning hub or profile, with source and date, and hold what it makes under `agent/Prepared/`. Improve owns the Improvements section of each responsibility hub and proposes; the owner adopts.
 8. **Reflections, triggers and dreams are memory types.** Reflections are cited inferences. Triggers are "when X, do Y." Dreams are fiction that can only enter memory through a reflection.
 9. **Open commitments never close by decay; pinned notes never fade.** A quiet task loads smaller; it never stops being owed.
 10. **Archive only what cannot be re-read.** Hermes keeps every session in a searchable store, so the nightly export is a backup and rebuild source, not the retrieval path. the owner's channels are perception: read in place, nothing copied.
@@ -29,13 +29,14 @@ Memory behaves like working memory backed by long-term memory. A small hot set i
 12. **Archive means cold, never gone.** Deletion is a separate action the owner requests.
 13. **A routine owns three places.** A state file it overwrites, a monthly ledger the engine appends one structured row to after each run, and the notes it feeds knowledge into. Never a file per run: git, the session store and the nightly export already hold the evidence. Artefacts that are the product (a dream, a reflection, a draft) are notes, not receipts. Machine payloads stay outside the vault.
 14. **Standing work has three homes.** A responsibility is a hub for understanding, an own skill for method and a records folder for state, linked to each other and never copies of each other. `brain responsibility` builds them; an own skill changes only when the owner adopts a proposal.
-15. **The owner's goals are a lens, not a script.** `memory/human/Goals.md` holds them in the owner's words and is in every session's context. They steer what the agent chooses to do unasked and the advice it gives when asked; they never enter a conversation uninvited and grant no reminders, schedules or actions.
+15. **The owner's goals are a lens, not a script.** `memory/human/Goals.md` holds them in the owner's words and is in every session's context. They steer what the agent chooses to do unasked and the advice it gives when asked; they never enter a conversation uninvited and grant no reminders, schedules or outward action. They do fund preparation.
+16. **Initiative has three tiers, and the day is in context.** Prepare (read, draft, find, make; no send, no spend) is free and held under `agent/Prepared/` as `kind: draft` until it comes up. Mention is rate-limited and for what is time-bound. Act outward needs the owner's recorded permission. A gesture, a made thing delivered unasked, needs a fresh occasion and a form unlike the recent ones, and reaction regulates it: two met with silence pause gestures for a month. No number in a skill is a target; the ledger records what was done. Sleep 2 writes `agent/Primed.md` as today for the owner, and the engine's Upcoming scan lists the week's dates; both load in every session.
 
 ## Tiers
 
 | Tier | Loaded when | What lives here | Budget |
 | --- | --- | --- | --- |
-| hot | Every session start, through `.hermes.md` | START, CURRENT, open tasks, Triggers, notes with high activation | START ≤ 600 words. CURRENT ≤ 1,500. Task entry ≤ 150. Hot notes ≤ 6,000 words total. |
+| hot | Every session start, through `.hermes.md` | START, CURRENT, Primed (today for the owner), Goals, Triggers, Upcoming dates, open tasks, notes with high activation | START ≤ 600 words. CURRENT ≤ 1,500. Primed ≤ 300. Task entry ≤ 150. Hot notes ≤ 6,000 words total. |
 | warm | When retrieve or the index line matches, or spreading activation reaches it | Hubs, profiles, reflections, records with middling activation | Index ≤ 25 words per note; matched notes load whole. |
 | cold | Only by explicit search | Folded episodes, closed months, completed tasks, session exports | None. |
 
@@ -108,7 +109,7 @@ Five cron jobs on the machine that runs the agent, each one commit on `main`. Gi
 | Attribution | 01:30 | Observed opens from the export; reliance judged per reply with its `reads:` line in view; Use Log rows only | `attribution(<date>)` |
 | Sleep 1 | 02:30 | Read the digest and channels; surprise-gated consolidation into owning notes, new topic notes, triggers and dated items; tidy hubs that grew; run `brain nightly --write`, which recomputes activation and tiers, places tasks, fires triggers, rebuilds CURRENT's threads, the views and `.hermes.md` | `sleep1(<date>)` |
 | REM | 03:30 | One dream from two or three random distant notes | `rem(<date>)` |
-| Sleep 2 | 04:00 | Retrieval audit, consolidation audit, weekly reflections, priming, proposals | `sleep2(<date>)` |
+| Sleep 2 | 04:00 | Retrieval audit, consolidation audit, weekly reflections, priming (today for the owner), the weekly service pass, proposals | `sleep2(<date>)` |
 
 The judgment steps are the skills in [[memory/hermes/README|Hermes]]. A skipped occurrence is reported in the morning, never caught up by a duplicate run.
 
@@ -121,6 +122,7 @@ The judgment steps are the skills in [[memory/hermes/README|Hermes]]. A skipped 
 | Place tasks by activation; archive and restore | Writing a reflection; deciding a task is superseded |
 | Fire date triggers; retire intentions with cold sources | Matching a trigger condition against an input |
 | Score retrieval candidates | Choosing what to load; choosing primed items and nudges |
+| Scan every note for dates in the next seven days (Upcoming) | Writing Primed: where the owner is, who with, what waits for them; choosing what to prepare and whether to deliver it |
 | Validate, commit, push | Index-line and link repairs from the audit |
 
 The script refuses to commit if validation fails. The model never recomputes activation by hand.
