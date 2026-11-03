@@ -62,9 +62,9 @@ hermes cron create "30 3 * * *" "Run REM."                             --skill b
 hermes cron create "0 4 * * *"  "Run Sleep 2."                         --skill brain-sleep2    --workdir $V --deliver local --name sleep2
 hermes cron create "0 7 * * *"  "Run Improve."                         --skill brain-improve   --workdir $V --deliver local --name improve
 hermes cron create "0 6 * * *"  "Run the People review."               --skill brain-people    --workdir $V --deliver local --name people
+hermes cron create "30 6 * * *" "Run prime."                          --skill brain-prime     --workdir $V --deliver local --name prime
 hermes cron create "0 8 * * *"  "Run the morning briefing."            --skill brain-morning   --workdir $V --deliver $P --name morning
-hermes cron create "0 12 * * *" "Run the midday review."               --skill brain-midday    --workdir $V --deliver $P --name midday
-hermes cron create "0 20 * * *" "Run the evening review."              --skill brain-evening   --workdir $V --deliver $P --name evening
+hermes cron create "0 20 * * *" "Run evening."                          --skill brain-evening   --workdir $V --deliver $P --name evening
 hermes cron create "0 * * * *"  "Run watch."                          --skill brain-watch     --workdir $V --deliver $P --name watch
 hermes cron create "30 8-22/2 * * *" "Run the explore pass."           --skill brain-explore   --workdir $V --deliver $P --name explore
 hermes cron create "*/30 * * * *" "Run continue."                      --skill brain-continue  --workdir $V --deliver $P --name continue
@@ -76,16 +76,18 @@ hermes cron create "*/30 * * * *" "Run continue."                      --skill b
 
 | Skill | When | Owns |
 | --- | --- | --- |
-| brain-recall | every substantive request | how the agent looks things up and writes small daytime updates |
+| brain-recall | every conversation | how the agent looks things up, talks to others and writes small daytime updates |
+| brain-setup | when the owner asks | changing a routine, a responsibility or a disclosure grant |
 | brain-attribute | 01:30 | which notes yesterday's replies relied on |
 | brain-sleep1 | 02:30 | consolidating yesterday into memory, tidying hubs, running the script |
 | brain-rem | 03:30 | one dream |
-| brain-sleep2 | 04:00 | retrieval audit, reflections, today for the owner (Primed), the weekly service pass |
+| brain-sleep2 | 04:00 | retrieval repairs; reflections weekly |
 | brain-people | 06:00 | profiles |
+| brain-prime | 06:30 | today for the owner: Primed, loaded in every session |
 | brain-improve | 07:00 | one responsibility studied as a practitioner; candidate responsibilities from yesterday |
 | brain-morning | 08:00 | the briefing: today for the owner, done for them, what needs them |
 | brain-watch | hourly | what needs the owner today, and the loops the agent left open: unanswered messages, unkept promises, answers it owes |
-| brain-midday, brain-evening | 12:00, 20:00 | register accuracy |
+| brain-evening | 20:00 | what has gone quiet: quiet tasks and unanswered asks, decided |
 | brain-explore | every two hours, daytime | own inbound, then one thing for the owner: work, a person's week or an occasion; most runs nothing |
 | brain-continue | every thirty minutes, day and night | whatever the owner handed off, worked until done or truly blocked, with one thing beyond the ask each pass; most runs nothing |
 

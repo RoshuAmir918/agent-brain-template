@@ -12,7 +12,7 @@ It follows the [LLM wiki](https://gist.github.com/karpathy/442a6bf555914893e9891
 - **Only surprises get written.** A fact the vault already states earns a use, not a copy. A correction from you supersedes in place. A conflicting third-party claim is kept beside the original and raised in the morning.
 - **Commitments that never decay.** "When X, do Y" lives in a pinned Triggers note and fires when the world matches it, however old.
 - **A night that does the housekeeping.** Export, attribute, consolidate, dream, audit. Each stage is one git commit, so `git log` tells you whether it ran and `git revert` undoes it.
-- **A day of routines you can keep or delete.** Morning briefing, hourly watch, midday and evening register checks, a daily people review, and an explore pass that asks, every two hours, what it could do for you today: work, a person in your week, or something you'd enjoy, prepared and held until it comes up, and most runs nothing.
+- **A day of routines, one job each.** Morning briefing, an hourly watch over your channels and every loop the agent left open, an evening pass that decides what has gone quiet, a daily people review, a short morning prime of what today is for you, a continue worker for whatever you hand off, and an explore pass that asks, every two hours, what it could do for you today: work, a person in your week, or something you'd enjoy, prepared and held until it comes up, and most runs nothing.
 - **Registries for people and for your other agents.** One sourced profile each, decaying like any note.
 - **Self-updating.** The engine upgrades itself every night. When an upgrade needs something changed in your notes, it leaves a prompt and your agent carries it out.
 
@@ -97,7 +97,7 @@ Nothing to do. The nightly export job runs `brain update` first, which upgrades 
 ## Make it yours
 
 - **Voice.** Edit `memory/agent/SOUL.md`. The refresh script copies it into Hermes within the hour.
-- **Routines come in two kinds.** Attribute, Sleep 1, Sleep 2, REM, Improve, People, Explore, Watch and recall are the engine's: it re-renders them on every refresh, keeping a `## Local` section at the end of each where your own additions go. To change the rest of one, fork `agent-brain`, change it there, and point `update_source` at your fork. Morning, midday and evening are defaults: written once on install, then yours. Edit them in `memory/hermes/skills/`, or delete the folder and its cron line. Add your own skill the same way.
+- **Every routine is the engine's.** It re-renders each one on every refresh, keeping a `## Local` section at the end where your own additions go: a daily reading in the morning briefing, a check you want every hour. To change the rest of one, fork `agent-brain`, change it there, and point `update_source` at your fork. Delete a routine by removing its cron line. Add your own skill under `memory/hermes/skills/`.
 - **Your goals.** `memory/human/Goals.md`, in your words. The agent uses it to choose what to work on and what to propose, and never to nag.
 - **Your existing notes.** Put them in `sources/`, or symlink your Obsidian vault there. The agent reads them and never edits them.
 - **Obsidian.** Open the repo as a vault. The wikilinks and graph work as-is.
