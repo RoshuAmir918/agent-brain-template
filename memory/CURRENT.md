@@ -17,7 +17,7 @@ Current work and dated pointers. [[memory/agent/Tasks]] owns execution. [[memory
 
 ## Needs you
 
-What only the owner can decide (`ask`), and what the agent went ahead with that they may want to correct (`confirm`, closed as accepted after seven days). One line each: `- <date> · ask · <question> · [[source]]`. Waiting tasks and proposed improvements are listed with these by `brain needs-you`.
+What only the owner can decide about their own life, work, people, money or sends (`ask`, at most five open, decided or retired by the evening at two weeks and gone at four), and what the agent went ahead with that they may want to correct (`confirm`, closed as accepted after seven days). Never the brain's own machinery, and never someone else's decision. One line each: `- <date> · ask · <question> · [[source]]`. Waiting tasks and proposed improvements are listed with these by `brain needs-you`.
 
 ## Owner waits and paused work
 
