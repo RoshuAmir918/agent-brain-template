@@ -65,7 +65,7 @@ hermes cron create "0 6 * * *"  "Run the People review."               --skill b
 hermes cron create "0 8 * * *"  "Run the morning briefing."            --skill brain-morning   --workdir $V --deliver $P --name morning
 hermes cron create "0 12 * * *" "Run the midday review."               --skill brain-midday    --workdir $V --deliver $P --name midday
 hermes cron create "0 20 * * *" "Run the evening review."              --skill brain-evening   --workdir $V --deliver $P --name evening
-hermes cron create "0 * * * *"  "Run the watch guard."                 --skill brain-watch     --workdir $V --deliver $P --name watch
+hermes cron create "0 * * * *"  "Run watch."                          --skill brain-watch     --workdir $V --deliver $P --name watch
 hermes cron create "30 8-22/2 * * *" "Run the explore pass."           --skill brain-explore   --workdir $V --deliver $P --name explore
 hermes cron create "*/30 * * * *" "Run continue."                      --skill brain-continue  --workdir $V --deliver $P --name continue
 ```
@@ -84,7 +84,7 @@ hermes cron create "*/30 * * * *" "Run continue."                      --skill b
 | brain-people | 06:00 | profiles |
 | brain-improve | 07:00 | one responsibility studied as a practitioner; candidate responsibilities from yesterday |
 | brain-morning | 08:00 | the briefing: today for the owner, done for them, what needs them |
-| brain-watch | hourly | urgent items from the last hour |
+| brain-watch | hourly | what needs the owner today, and the loops the agent left open: unanswered messages, unkept promises, answers it owes |
 | brain-midday, brain-evening | 12:00, 20:00 | register accuracy |
 | brain-explore | every two hours, daytime | own inbound, then one thing for the owner: work, a person's week or an occasion; most runs nothing |
 | brain-continue | every thirty minutes, day and night | whatever the owner handed off, worked until done or truly blocked, with one thing beyond the ask each pass; most runs nothing |
