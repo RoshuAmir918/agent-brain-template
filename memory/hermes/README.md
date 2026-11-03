@@ -67,6 +67,7 @@ hermes cron create "0 12 * * *" "Run the midday review."               --skill b
 hermes cron create "0 20 * * *" "Run the evening review."              --skill brain-evening   --workdir $V --deliver $P --name evening
 hermes cron create "0 * * * *"  "Run the watch guard."                 --skill brain-watch     --workdir $V --deliver $P --name watch
 hermes cron create "30 8-22/2 * * *" "Run the explore pass."           --skill brain-explore   --workdir $V --deliver $P --name explore
+hermes cron create "*/30 * * * *" "Run continue."                      --skill brain-continue  --workdir $V --deliver $P --name continue
 ```
 
 `--deliver $P` sends to Home, the platform's home channel. Jobs that have nothing to say produce no message; the skills say so, because delivery sends whatever the job outputs. Hermes disables cron management inside cron runs, so a skill cannot schedule more jobs.
@@ -86,6 +87,7 @@ hermes cron create "30 8-22/2 * * *" "Run the explore pass."           --skill b
 | brain-watch | hourly | urgent items from the last hour |
 | brain-midday, brain-evening | 12:00, 20:00 | register accuracy |
 | brain-explore | every two hours, daytime | own inbound, then one thing for the owner: work, a person's week or an occasion; most runs nothing |
+| brain-continue | every thirty minutes, day and night | whatever the owner handed off, worked until done or truly blocked, with one thing beyond the ask each pass; most runs nothing |
 
 This table is the declared schedule. Sleep 2 compares it with `hermes cron list` every night and records drift in the Sleep Log. The agent changes the schedule only when asked in conversation: by the owner for anything, or by a maintainer for the engine's routines (everything here except the briefing hour and routines the owner asked for by name). It records the request, updates this table, and applies it. Delete what you do not want; add a routine by copying a skill and adding a line here.
 
