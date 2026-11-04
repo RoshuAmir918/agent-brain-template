@@ -63,7 +63,7 @@ Hermes reads `.hermes.md` from the directory it starts in. On a fresh copy that 
 
 - ask you what to call it, your name, your timezone and sleep hours, which channel you will mostly use, what you want it for, and how you like to be spoken to. Answer in your own words; your answers become its identity file, its profile of you, and its first memory;
 - write those into `memory/agent/SOUL.md`, `memory/human/Profile.md` and a dated conversation record, and put the two names in `brain.toml`;
-- run `brain install-scripts` and `brain install-skills`, and set the Hermes config keys it needs (it will tell you which, and ask before anything that touches credentials);
+- run `brain install-scripts` and `brain install-skills`, set the Hermes config keys it needs (it will tell you which, and ask before anything that touches credentials), set your timezone for its schedule, and give its repository its own git identity;
 - generate the real `.hermes.md`, copy SOUL into the Hermes home, and create the cron jobs, checking that the first one lands in your timezone;
 - commit, and tell you what will happen tonight.
 
@@ -107,7 +107,7 @@ Nothing to do. The nightly export job runs `brain update` first, which upgrades 
 
 - **`pip install` fails with a permissions or not-found error.** The engine repo may still be private; ask whoever shared this with you, or install from a fork you can reach.
 - **The agent did not see the bootstrap.** Hermes was not started from the repo root. `cd ~/brain && hermes`.
-- **Cron jobs run at the wrong hour.** The Hermes docs do not say which timezone a cron expression uses. `hermes cron list` shows the next run; if it is off, ask the agent to shift the hours.
+- **Cron jobs run at the wrong hour.** Hermes reads cron hours in the profile's timezone: `timezone` in its config, overridden by `HERMES_TIMEZONE` in the profile's `.env`. Set both to your zone (and `TZ` in the same `.env`), then `hermes gateway restart`; `hermes cron list` should show next runs with your UTC offset. Do not shift the hours to compensate: translated hours drift out of order and break when the zone is fixed.
 - **No night commits.** Check the gateway is running (`hermes` must be running for agent cron jobs to execute) and `hermes cron list` shows the jobs enabled. The morning briefing also reports a missing stage.
 - **The digest is empty or has no `reads:` lines.** The session-export parser's field-name assumptions differ from your Hermes version. They are listed in the engine's `docs/engine.md`; open an issue on `agent-brain` with a redacted sample of `memory/Conversations/Sessions/all.jsonl`.
 - **SOUL changes are not showing up.** The hourly refresh copies it; wait for the next run, or run `~/.hermes/scripts/refresh.sh` yourself.
