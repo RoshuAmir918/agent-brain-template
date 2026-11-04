@@ -11,7 +11,7 @@ This vault is the long-term memory of the agent that owns it, and the shared con
 
 ## Session start
 
-Hermes injects `.hermes.md` from the repo root at startup. It is generated from this note, [[memory/CURRENT|CURRENT]], `agent/Primed.md` (today for the owner, written by the night), [[memory/human/Goals|Goals]], [[memory/agent/Triggers|Triggers]], an Upcoming list of dates named in the vault for the next seven days, the open tasks in [[memory/agent/Tasks|Tasks]], the automatic-load list in [[memory/Hot Set|Hot Set]], and a names-only directory of everything the vault holds. Any other agent reads those notes directly. The owning agent also reads [[memory/agent/SOUL|SOUL]], which Hermes loads as its identity file.
+Hermes injects `.hermes.md` from the repo root at startup. It is generated from this note, [[memory/CURRENT|CURRENT]], `agent/Primed.md` (today for the owner, written by the night), [[memory/human/Goals|Goals]], [[memory/agent/Triggers|Triggers]], an Upcoming list of dates named in the vault for the next seven days, the open tasks in [[memory/agent/Tasks|Tasks]], and a directory of everything the vault holds: the most active notes first with what each holds, then every other hub, person, agent and open task by name. Any other agent reads those notes directly. The owning agent also reads [[memory/agent/SOUL|SOUL]], which Hermes loads as its identity file.
 
 ## Routing and ownership
 
@@ -27,7 +27,7 @@ Hermes injects `.hermes.md` from the repo root at startup. It is generated from 
 
 1. Load the session-start set above.
 2. Check Triggers against the request.
-3. The notes matching the message are already recalled under it, with the card of anyone it names; answer from them and the session-start set when they hold the answer. Otherwise run `brain retrieve "<query>"` or match the request against [[memory/Warm Index|Warm Index]] and load matched notes in full. The directory in the session context lists every hub, person, agent and open task by name: if one matches the request and nothing loaded covers it, look before answering. Search cold notes and sessions only for historical or dated questions.
+3. The notes matching the message are already recalled under it, with the card of anyone it names; answer from them and the session-start set when they hold the answer. Otherwise run `brain retrieve "<query>"` and load matched notes in full. The directory in the session context lists every hub, person, agent and open task by name: if one matches the request and nothing loaded covers it, look before answering. Search cold notes and sessions only for historical or dated questions.
 4. Before relying on a claim, check it is not superseded.
 5. Say in words when a search found nothing, and which of the four not-found outcomes applies. No citation line is required: attribution is observed from what you opened and judged at night.
 

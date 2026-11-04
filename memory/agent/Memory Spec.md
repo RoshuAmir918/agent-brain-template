@@ -11,7 +11,7 @@ The memory model for this vault. The script that implements the arithmetic is `m
 
 ## Goal
 
-Memory behaves like working memory backed by long-term memory. A small hot set is always loaded. Anything deeper is one retrieval away. Things that get used stay fresh; things that don't fade out of routine context on their own. Related things surface together. Only surprises get written. Nothing is deleted by fading.
+Memory behaves like working memory backed by long-term memory. The directory's most active notes are always named, with what each holds. Anything deeper is one retrieval away. Things that get used stay fresh; things that don't fade out of routine context on their own. Related things surface together. Only surprises get written. Nothing is deleted by fading.
 
 ## Decisions
 
@@ -40,7 +40,7 @@ Memory behaves like working memory backed by long-term memory. A small hot set i
 | warm | When retrieve or the index line matches, or spreading activation reaches it | Hubs, profiles, reflections, records with middling activation | Index ≤ 25 words per note; matched notes load whole. |
 | cold | Only by explicit search | Folded episodes, closed months, completed tasks, session exports | None. |
 
-Budgets are targets. A note over budget is split or summarized, never truncated. If the hot set exceeds its budget, lower-ranked unpinned notes become on-demand overflow without changing their tier.
+Budgets are targets. A note over budget is split or summarized, never truncated. If the most active notes exceed their budget, lower-ranked unpinned notes are listed by name only, without changing their tier.
 
 ## Note contract
 
@@ -83,9 +83,9 @@ Exponent 1, not ACT-R's 0.5, after simulation showed 0.5 keeps a daily-used note
 
 ## Retrieval
 
-1. Load the session-start set: START, CURRENT, Triggers, the open-task register and the Hot Set's automatic-load list. Hermes does this through `.hermes.md`.
+1. Load the session-start set: START, CURRENT, Triggers, the open-task register and the directory. Hermes does this through `.hermes.md`.
 2. Check Triggers against the request.
-3. Run `brain retrieve "<query>"` or match against the Warm Index. Load matched notes in full.
+3. Run `brain retrieve "<query>"`. Load matched notes in full.
 4. Spread one hop: notes wikilinked from loaded notes get a temporary +1.0; any that reach the hot threshold load, newest first, within budget. Never written back.
 5. For historical or dated questions, search cold notes and `Conversations/Sessions/` by text and date, or use Hermes session search. Load only matching sections.
 6. Check for a "superseded by" line before relying on a claim.

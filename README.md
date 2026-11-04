@@ -6,7 +6,7 @@ It follows the [LLM wiki](https://gist.github.com/karpathy/442a6bf555914893e9891
 
 ## What you get
 
-- **Working memory backed by long-term memory.** A small hot set is in every session. Everything else is one retrieval away, and the agent is told what exists so it knows to look.
+- **Working memory backed by long-term memory.** Every session names the most active notes and what each holds. Everything else is one retrieval away, and the agent is told what exists so it knows to look.
 - **Decay that measures use, not loading.** Every note has an activation score computed nightly from when the agent relied on it. Notes you talk about stay hot; notes you don't fade to an index line, then to search-only. Nothing is deleted.
 - **Attribution that watches, not asks.** Hermes records every tool call, so the night sees which notes the agent opened before each reply and judges which it relied on. The agent never has to cite.
 - **Only surprises get written.** A fact the vault already states earns a use, not a copy. A correction from you supersedes in place. A conflicting third-party claim is kept beside the original and raised in the morning.
