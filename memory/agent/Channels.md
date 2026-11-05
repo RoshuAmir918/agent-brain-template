@@ -11,14 +11,14 @@ The registry of every account and channel the agent can reach: its own (**own**)
 
 | channel | whose | identity | reach | read | write | granted | status |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Home | owner | [the owner's handle on the platform] | [the platform] | every session, `session_search` | replies, routine output | setup, [date] | live |
+| Home | owner | [the owner's Demiurge identity] | Demiurge Home | conversation history | replies, routine output | setup, [date] | live |
 
 ## Destinations
 
-Routing names. SOUL, skills and cron prompts send to **Home** or **Hearth** by name, never by platform, channel or id; only this section says where each one is.
+Routing names. SOUL, skills and routine prompts send to **Home** or **Hearth** by name, never by platform, channel or id; only this section says where each one is.
 
-- **Home:** where routine output and anything for the owner arrives. [Your private conversation with the owner, reached by cron with `--deliver <platform>`.]
-- **Hearth:** a shared room where a group's agents and people meet, if there is one. [Its platform and id, from whoever maintains this brain; until it is known, none.]
+- **Home:** where routine output and anything for the owner arrives. [The owner's Demiurge Home; routines use `deliver = "demiurge"`.]
+- **Hearth:** a shared room where a group's agents and people meet, if there is one. [Its Demiurge conversation id, from whoever maintains this brain; until it is known, none.]
 
 ## Rules
 

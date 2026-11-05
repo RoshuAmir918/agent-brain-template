@@ -7,7 +7,7 @@ uses_inferred: []
 ---
 # Current priorities
 
-Current work and dated pointers. [[memory/agent/Tasks]] owns execution. [[memory/hermes/README]] owns deployment and routines. [[memory/agent/SOUL]] and [[memory/START]] own standing rules.
+Current work and dated pointers. [[memory/agent/Tasks]] owns execution. [[memory/Runtime/README]] owns deployment and routines. [[memory/agent/SOUL]] and [[memory/START]] own standing rules.
 
 ## Active threads
 

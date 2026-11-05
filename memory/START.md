@@ -11,7 +11,9 @@ This vault is the long-term memory of the agent that owns it, and the shared con
 
 ## Session start
 
-Hermes injects `.hermes.md` from the repo root at startup. It is generated from this note, [[memory/CURRENT|CURRENT]], `agent/Primed.md` (today for the owner, written by the night), [[memory/human/Goals|Goals]], [[memory/agent/Triggers|Triggers]], an Upcoming list of dates named in the vault for the next seven days, the open tasks in [[memory/agent/Tasks|Tasks]], and a directory of everything the vault holds: the most active notes first with what each holds, then every other hub, person, agent and open task by name. Any other agent reads those notes directly. The owning agent also reads [[memory/agent/SOUL|SOUL]], which Hermes loads as its identity file.
+If SOUL still has bracketed placeholders, read `AGENTS.md` at the repo root and complete setup with the owner present.
+
+The harness loads `.context.md` from the repo root at startup. It is generated from this note, [[memory/CURRENT|CURRENT]], `agent/Primed.md` (today for the owner, written by the night), [[memory/human/Goals|Goals]], [[memory/agent/Triggers|Triggers]], an Upcoming list of dates named in the vault for the next seven days, the open tasks in [[memory/agent/Tasks|Tasks]], and a directory of everything the vault holds: the most active notes first with what each holds, then every other hub, person, agent and open task by name. Any other agent reads those notes directly. The owning agent also reads [[memory/agent/SOUL|SOUL]], which the harness reads through `brain paths soul`.
 
 ## Routing and ownership
 
@@ -19,15 +21,15 @@ Hermes injects `.hermes.md` from the repo root at startup. It is generated from 
 - **The owner:** [[memory/human/Profile|Profile]] owns durable background and preferences. [[memory/human/Goals|Goals]] owns what they are trying to become, in their words: a lens for what the agent chooses to do, never raised uninvited.
 - **People:** [[memory/people/README|People]] owns concise, sourced profiles of the owner's friends and collaborators.
 - **Agents:** [[memory/agents/README|Agents]] owns the registry of the owner's other agents: purpose, reach, how to work with each, and what their reports are worth.
-- **The agent itself:** [[memory/agent/SOUL|SOUL]] owns identity and voice. [[memory/agent/Memory Spec|Memory Spec]] owns how memory works. [[memory/hermes/README|Hermes]] owns deployment, cron jobs and the skills that carry each routine.
-- **Topics:** one hub per project or area of life, at the root of `memory/`, created by the night when a durable topic appears. List them here as they appear. Standing work the agent holds is a responsibility: a hub with `skill:` and `records:` in its frontmatter, an own skill, and a records folder under the Hermes home; `brain responsibility` builds the three.
-- **Evidence:** `memory/Conversations/` holds dated records and, under `Sessions/` and `Digests/`, the nightly session export. Cold, never loaded whole. Search it or use session search.
+- **The agent itself:** [[memory/agent/SOUL|SOUL]] owns identity and voice. [[memory/agent/Memory Spec|Memory Spec]] owns how memory works. [[memory/Runtime/README|Runtime]] owns deployment, declared routines and the skills that carry each routine.
+- **Topics:** one hub per project or area of life, at the root of `memory/`, created by the night when a durable topic appears. List them here as they appear. Standing work the agent holds is a responsibility: a hub with `skill:` and `records:` in its frontmatter, an own skill, and a records folder under `$AGENT_HOME`; `brain responsibility` builds the three.
+- **Evidence:** `memory/Conversations/` holds dated records and, under `Sessions/` and `Digests/`, the nightly session export. Cold, never loaded whole. Search the exported text by date and content.
 
 ## Retrieval
 
 1. Load the session-start set above.
 2. Check Triggers against the request.
-3. The notes matching the message are already recalled under it, with the card of anyone it names; answer from them and the session-start set when they hold the answer. Otherwise run `brain retrieve "<query>"` and load matched notes in full. The directory in the session context lists every hub, person, agent and open task by name: if one matches the request and nothing loaded covers it, look before answering. Search cold notes and sessions only for historical or dated questions.
+3. The notes matching the message are already recalled under it, with the card of anyone it names; answer from them and the session-start set when they hold the answer. Otherwise run `brain retrieve "<query>"` and load matched notes in full. The directory in the session context lists every hub, person, agent and open task by name: if one matches the request and nothing loaded covers it, look before answering. Search cold notes and exported sessions by text and date only for historical or dated questions.
 4. Before relying on a claim, check it is not superseded.
 5. Say in words when a search found nothing, and which of the four not-found outcomes applies. No citation line is required: attribution is observed from what you opened and judged at night.
 

@@ -1,0 +1,81 @@
+# The routines this agent runs. Edit with `brain schedule`; the runtime applies changes within a minute.
+
+[routines.attribution]
+cron = "30 1 * * *"
+skills = ["brain-attribute"]
+prompt = "Run attribution for yesterday."
+
+[routines.context-refresh]
+cron = "15 * * * *"
+script = "refresh.sh"
+agent = false
+
+[routines.continue]
+cron = "*/30 * * * *"
+skills = ["brain-continue"]
+deliver = "demiurge"
+monitor = "continue-signal.sh"
+
+[routines.continue-daily]
+cron = "0 12 * * *"
+skills = ["brain-continue"]
+prompt = "Run continue daily."
+deliver = "demiurge"
+monitor = "continue-daily-signal.sh"
+
+[routines.evening]
+cron = "0 20 * * *"
+skills = ["brain-evening"]
+deliver = "demiurge"
+
+[routines.explore]
+cron = "30 8-22/2 * * *"
+skills = ["brain-explore"]
+prompt = "Run the explore pass."
+deliver = "demiurge"
+
+[routines.improve]
+cron = "0 7 * * *"
+skills = ["brain-improve"]
+prompt = "Run Improve."
+
+[routines.morning]
+cron = "0 8 * * *"
+skills = ["brain-morning"]
+prompt = "Run the morning briefing."
+deliver = "demiurge"
+
+[routines.people]
+cron = "0 6 * * *"
+skills = ["brain-people"]
+prompt = "Run the People review."
+
+[routines.prime]
+cron = "30 6 * * *"
+skills = ["brain-prime"]
+
+[routines.rem]
+cron = "30 3 * * *"
+skills = ["brain-rem"]
+prompt = "Run REM."
+
+[routines.session-export]
+cron = "30 0 * * *"
+script = "export-sessions.sh"
+agent = false
+
+[routines.sleep1]
+cron = "30 2 * * *"
+skills = ["brain-sleep1"]
+prompt = "Run Sleep 1 for yesterday."
+
+[routines.sleep2]
+cron = "0 4 * * *"
+skills = ["brain-sleep2"]
+prompt = "Run Sleep 2."
+
+[routines.watch]
+cron = "0 * * * *"
+skills = ["brain-watch"]
+deliver = "demiurge"
+monitor = "watch-signal.sh"

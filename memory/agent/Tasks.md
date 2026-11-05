@@ -22,9 +22,9 @@ For every active task record: outcome, status, owner, source request, verified p
 ### T-001 — Finish setting up this brain
 <!-- brain: state=in_progress; tier=hot; pinned=true -->
 - **Status:** Open. Created by the bootstrap on first run.
-- **Next:** Fill SOUL and the owner profile; create the cron jobs; run one night; read the first digest and briefing.
+- **Next:** Fill SOUL and the owner profile; declare the routines with `brain schedule`; run one night; read the first digest and briefing.
 - **Scope:** Setup only. No sends to anyone but the owner.
-- **Latest evidence:** [[memory/hermes/README|the deployment note]].
+- **Latest evidence:** [[memory/Runtime/README|the deployment note]].
 
 ## Standing coordination state
 

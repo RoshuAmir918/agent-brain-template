@@ -15,7 +15,7 @@ Twelve questions, three each for correct answers, corrections, uncertainty and q
 
 ## Running
 
-Sleep 2 samples three questions nightly and runs all twelve on its first run after Sunday ([[memory/hermes/skills/brain-sleep2/SKILL|brain-sleep2]]). the owner gave standing permission on October 10 for separate fresh read-only testers. Each tester starts fresh and sees only the question. It never sees the answers, earlier results or these check notes. It never reads credential or code notes, including `sources/github-recovery-codes.txt` and `sources/Important Codes.md`.
+Sleep 2 samples three questions nightly and runs all twelve on its first run after Sunday (`brain-sleep2`, installed under `memory/Runtime/skills/`). the owner gave standing permission on October 10 for separate fresh read-only testers. Each tester starts fresh and sees only the question. It never sees the answers, earlier results or these check notes. It never reads credential or code notes, including `sources/github-recovery-codes.txt` and `sources/Important Codes.md`.
 
 ## Grading
 
@@ -23,4 +23,4 @@ Grade on content and appropriate uncertainty, never wording. A pass needs the ma
 
 ## Files
 
-The bank lives in `agent/Retrieval Checks/Questions.md` and results in `agent/Retrieval Checks/Results.md`. Sleep 2 creates both on its first Hermes run, from real questions.
+The bank lives in `agent/Retrieval Checks/Questions.md` and results in `agent/Retrieval Checks/Results.md`. Sleep 2 creates both on its first harness run, from real questions.
