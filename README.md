@@ -57,7 +57,7 @@ brain compile-context --write
 
 Scripts go under `$AGENT_HOME/scripts/`; skills go under `memory/Runtime/skills/`. The compiled session context is `.context.md`; SOUL is read from `brain paths soul`.
 
-Have the host maintainer start the per-agent launchd service `ai.demiurge.harness.<id>`, running `harness serve <id>` with the installed executable and service environment. Its log is `~/.harness/logs/<id>.log`. Use a harness version that implements the engine's current runtime contract.
+Have whoever runs the host start the per-agent launchd service `ai.demiurge.harness.<id>`, running `harness serve <id>` with the installed executable and service environment. Its log is `~/.harness/logs/<id>.log`. Use a harness version that implements the engine's current runtime contract.
 
 **5. Talk to the agent in Demiurge Home.** It follows `AGENTS.md`: asks its name and yours, your timezone and sleep hours, what you want it for, and how you like to be spoken to. It fills SOUL, your profile, Channels and a first conversation record, then sets the names, owner ids and timezone in `brain.toml`.
 
