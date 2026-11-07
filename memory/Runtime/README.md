@@ -42,7 +42,7 @@ Create `~/.harness/agents/<id>.json`. Agent ids use lowercase letters, digits an
 2. From the repo, with `AGENT_HOME` and `VAULT_REPO` set, run `brain install-scripts` and `brain install-skills`. Scripts go into `$AGENT_HOME/scripts/`; core skills into `memory/Runtime/skills/`.
 3. Run `brain compile-context --write`. `.context.md` is the compiled session context; `brain paths soul` gives the canonical SOUL file the harness reads.
 4. Check the starter schedule with `brain schedule list` and `brain schedule check`.
-5. Have the host maintainer register/start launchd service `ai.demiurge.harness.<id>` running `harness serve <id>`, with the installed executable, vault working directory and service PATH. Its log is `~/.harness/logs/<id>.log`. The source tree does not include a harness service installer; use the host's service setup rather than inventing a command.
+5. Have whoever runs the host register/start launchd service `ai.demiurge.harness.<id>` running `harness serve <id>`, with the installed executable, vault working directory and service PATH. Its log is `~/.harness/logs/<id>.log`. The source tree does not include a harness service installer; use the host's service setup rather than inventing a command.
 6. Talk in Demiurge Home and complete `AGENTS.md`: fill identity and profile, set the owner's timezone, adjust routines with `brain schedule set`, then run `brain nightly --write` and `brain compile-context --write`. Read back `brain schedule list` and run `brain validate`. Check the log for `serving Demiurge`, routine starts, outcomes and errors; confirm next runs in Demiurge. Verify identity and `.context.md` in a fresh conversation. Use a harness build implementing the current engine runtime contract.
 
 ## Schedule
@@ -59,7 +59,7 @@ brain schedule check
 
 Use `pause`, `resume` or `remove` to stop or restore a routine. `set` also accepts `--every <n>m` / `<n>h` or `--at <ISO datetime with offset>` instead of `--cron`. Delivery is `local` (no message), `demiurge` (Home), or `demiurge:<conversation id>`. Runs with nothing to say end with `[SILENT]`. Invalid declarations keep the last valid jobs and are logged.
 
-Record a schedule change request before applying it. The owner can change anything; a maintainer can change engine routines except the briefing hour and routines the owner asked for by name. Add those with `--owner`.
+Record a schedule change request before applying it. The owner can change anything. The briefing hour and routines the owner asked for by name are the owner's; add those with `--owner`.
 
 | Routine | Default local time | Skill or script | Delivery |
 | --- | --- | --- | --- |
