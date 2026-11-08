@@ -22,7 +22,8 @@ For every active task record: outcome, status, owner, source request, verified p
 ### T-001 — Finish setting up this brain
 <!-- brain: state=in_progress; tier=hot; pinned=true -->
 - **Status:** Open. Created by the bootstrap on first run.
-- **Next:** Fill SOUL and the owner profile; declare the routines with `brain schedule`; run one night; read the first digest and briefing.
+- **Next:** Get to know the owner: talk with them in Home, read what they connect, and show them the first portrait once the seed has read it.
+- **Delivers:** the owner's first portrait, which they read and correct.
 - **Scope:** Setup only. No sends to anyone but the owner.
 - **Latest evidence:** [[memory/Runtime/README|the deployment note]].
 
