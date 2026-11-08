@@ -2,8 +2,9 @@
 
 [routines.attribution]
 cron = "30 1 * * *"
-skills = ["brain-attribute"]
-prompt = "Run attribution for yesterday."
+prompt = ""
+script = "attribution.sh"
+agent = false
 
 [routines.context-refresh]
 cron = "15 * * * *"
@@ -53,11 +54,6 @@ prompt = "Run the People review."
 [routines.prime]
 cron = "30 6 * * *"
 skills = ["brain-prime"]
-
-[routines.rem]
-cron = "30 3 * * *"
-skills = ["brain-rem"]
-prompt = "Run REM."
 
 [routines.session-export]
 cron = "30 0 * * *"
