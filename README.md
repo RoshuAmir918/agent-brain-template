@@ -11,7 +11,7 @@ It follows the [LLM wiki](https://gist.github.com/karpathy/442a6bf555914893e9891
 - **Only surprises get written.** A fact the vault already states earns a use, not a copy. Your correction supersedes in place; an unverified conflict stays beside the original.
 - **Commitments that never decay.** “When X, do Y” lives in a pinned Triggers note until fulfilled or cancelled.
 - **A night that does the housekeeping.** Export, attribute, consolidate, dream, audit. Each stage leaves a git commit.
-- **A day of routines.** Morning briefing, watch, people review, prime, improve, explore, continue and evening. Most runs have nothing to send.
+- **A day of routines.** Morning briefing, watch, people review, prime, improve, explore and evening. Most runs have nothing to send.
 - **Registries for people and other agents.** One sourced profile each, decaying like any note.
 - **Self-updating.** The engine upgrades nightly; a version's migration runs as a one-shot routine.
 
@@ -68,7 +68,7 @@ brain schedule set morning --cron "0 8 * * *" --skills brain-morning --prompt "R
 brain schedule list
 ```
 
-Keep people before the briefing and prime half an hour before it. Watch, continue and continue-daily keep their monitors. The harness applies schedule changes within a minute; never edit `harness/jobs.json`.
+Keep people before the briefing and prime half an hour before it. Watch keeps its monitor. The harness applies schedule changes within a minute; never edit `harness/jobs.json`.
 
 **6. Verify today and tomorrow.** Run `brain schedule list`, `brain schedule check` and `brain validate` from the repo. Check the harness log for `serving Demiurge` and routine runs, and confirm the declared routines appear in Demiurge with the right next runs. A declared schedule alone does not prove the service has applied it. In a fresh conversation, check that the agent sees its identity and generated `.context.md`.
 
