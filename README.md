@@ -2,7 +2,7 @@
 
 A starter vault for a personal AI agent's long-term memory, kept as Markdown in git. Copy this template, install the engine, and run the agent on the Demiurge harness. It sets itself up by talking to you in Home.
 
-It follows the [LLM wiki](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) pattern and adds a memory model that decides what the agent loads, what fades, and what it never forgets. The engine is the separate [`agent-brain`](https://github.com/RoshuAmir918/agent-brain) package. This repo holds notes, configuration and a starter schedule; engine improvements arrive without merging upstream changes into your vault.
+It follows the [LLM wiki](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) pattern and adds a memory model that decides what the agent loads, what fades, and what it never forgets. The engine is the separate [`agent-brain`](https://github.com/demiurge-lab/agent-brain) package. This repo holds notes, configuration and a starter schedule; engine improvements arrive without merging upstream changes into your vault.
 
 ## What you get
 
@@ -37,7 +37,7 @@ Arrange unattended Git authentication for the night jobs. They commit and push t
 **2. Install the engine.**
 
 ```sh
-python3 -m pip install git+https://github.com/RoshuAmir918/agent-brain
+python3 -m pip install git+https://github.com/demiurge-lab/agent-brain
 brain --help
 ```
 
@@ -93,6 +93,6 @@ The next morning, `git log --oneline --since=yesterday` should show `archive`, `
 
 Check `brain validate`, `brain schedule list` and `~/.harness/logs/<id>.log` first. Wrong hours mean checking `brain timezone`, not translating cron hours into the host's zone. Missing runs mean checking the launchd service, the routines shown in Demiurge, and monitor errors. An invalid schedule keeps the last valid jobs and is logged. Rebuild context with `brain compile-context --write`; refresh skills with `brain install-skills`.
 
-The memory model is in `memory/agent/Memory Spec.md`; deployment and the routine list are in [Runtime](memory/Runtime/README.md). Engine issues go to [`agent-brain`](https://github.com/RoshuAmir918/agent-brain); template issues here.
+The memory model is in `memory/agent/Memory Spec.md`; deployment and the routine list are in [Runtime](memory/Runtime/README.md). Engine issues go to [`agent-brain`](https://github.com/demiurge-lab/agent-brain); template issues here.
 
 MIT.
