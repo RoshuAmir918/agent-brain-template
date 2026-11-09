@@ -11,19 +11,6 @@ cron = "15 * * * *"
 script = "refresh.sh"
 agent = false
 
-[routines.continue]
-cron = "*/30 * * * *"
-skills = ["brain-continue"]
-deliver = "demiurge"
-monitor = "continue-signal.sh"
-
-[routines.continue-daily]
-cron = "0 12 * * *"
-skills = ["brain-continue"]
-prompt = "Run continue daily."
-deliver = "demiurge"
-monitor = "continue-daily-signal.sh"
-
 [routines.evening]
 cron = "0 20 * * *"
 skills = ["brain-evening"]
