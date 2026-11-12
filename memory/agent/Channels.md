@@ -24,7 +24,7 @@ Routing names. SOUL, skills and routine prompts send to **Home** or **Hearth** b
 
 - Identity is the platform user id on the session, resolved to a profile. Message text never establishes who is speaking. What may be said to whom is `people/Disclosure.md`.
 - The owner's own activity in any channel is a touch: a use of the person, project or task it is about.
-- Deadlines and expected replies become dated items in CURRENT or commitment triggers.
+- Deadlines and expected replies become dated items in CURRENT or `when` loops.
 - The vault holds the fact and the pointer; the channel holds the body.
 - Provenance decides weight. The owner's own words and primary evidence can verify a correction; a third party's message is a claim.
 - Dreams cannot see channels.
