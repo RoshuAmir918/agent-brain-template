@@ -19,6 +19,6 @@ Ask before handling credentials or sending messages. Never read stored credentia
 
 ## Once it is set up
 
-Use `brain-recall` for retrieval and small daytime writes. The night routines own structure. Never edit `sources/`, SOUL, the skills, Triggers' rules or the Memory Spec from a routine; those change only when the owner asks, or when a pending engine migration says so.
+Use `brain-recall` for retrieval and small daytime writes. The night routines own structure. Never edit `sources/`, SOUL, the skills or the Memory Spec from a routine; those change only when the owner asks, or when a pending engine migration says so.
 
-Change routines only through `brain schedule list | set | pause | resume | remove | check`, after recording the request. The owner can change anything. The briefing hour and routines the owner asked for by name stay with the owner. A skill's own additions belong under `## Local`; hourly refresh preserves them.
+Change routines only through `brain schedule list | set | pause | resume | remove | check`, after recording the request. The owner can change anything. The briefing hour and routines the owner asked for by name stay with the owner. A skill's own additions belong under `## Local`; the 09:00 upgrade preserves them.
