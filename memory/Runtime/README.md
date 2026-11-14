@@ -41,45 +41,25 @@ Create `~/.harness/agents/<id>.json`. Agent ids use lowercase letters, digits an
 1. Install agent-brain 0.30+ and check `brain --help`. Fill the names, permanent owner ids and owner's IANA timezone in `brain.toml`; `brain timezone` reads it.
 2. From the repo, with `AGENT_HOME` and `VAULT_REPO` set, run `brain install-scripts` and `brain install-skills`. Scripts go into `$AGENT_HOME/scripts/`; core skills into `memory/Runtime/skills/`.
 3. Run `brain compile-context --write`. `.context.md` is the compiled session context; `brain paths soul` gives the canonical SOUL file the harness reads.
-4. Check the starter schedule with `brain schedule list` and `brain schedule check`.
+4. Write the routines with `brain schedule init`, then check them with `brain schedule list` and `brain schedule check`.
 5. Have whoever runs the host register/start launchd service `ai.demiurge.harness.<id>` running `harness serve <id>`, with the installed executable, vault working directory and service PATH. Its log is `~/.harness/logs/<id>.log`. The source tree does not include a harness service installer; use the host's service setup rather than inventing a command.
 6. Talk in Demiurge Home and complete `AGENTS.md`: fill identity and profile, set the owner's timezone, adjust routines with `brain schedule set`, then run `brain nightly --write` and `brain compile-context --write`. Read back `brain schedule list` and run `brain validate`. Check the log for `serving Demiurge`, routine starts, outcomes and errors; confirm next runs in Demiurge. Verify identity and `.context.md` in a fresh conversation. Use a harness build implementing the current engine runtime contract.
 
 ## Schedule
 
-`memory/Runtime/schedule.toml` is the source of truth, not this table or `$AGENT_HOME/harness/jobs.json`. Change routines only with `brain schedule`; the harness applies changes within a minute. Cron hours are the owner's local hours (`brain timezone`). Defaults below are starting points; move them to suit sleep. People precedes morning; prime runs half an hour before it.
+`memory/Runtime/schedule.toml` is the source of truth, not `$AGENT_HOME/harness/jobs.json`. `brain schedule init` writes the engine's default routines for this vault's edition; `brain schedule list` shows what is declared. Change routines only with `brain schedule`; the harness applies changes within a minute. Cron hours are the owner's local hours (`brain timezone`).
 
 ```sh
-brain schedule set morning --cron "0 8 * * *" --skills brain-morning --prompt "Run the morning briefing." --deliver demiurge
-brain schedule set watch --cron "0 * * * *" --skills brain-watch --prompt "Run watch." --deliver demiurge --monitor watch-signal.sh
-brain schedule set session-export --cron "30 0 * * *" --script export-sessions.sh --no-agent --deliver local
+brain schedule set watch --cron "*/15 6-22 * * *" --skills brain-watch --deliver demiurge --monitor watch-signal.sh
 brain schedule list
 brain schedule check
 ```
 
 Use `pause`, `resume` or `remove` to stop or restore a routine. `set` also accepts `--every <n>m` / `<n>h` or `--at <ISO datetime with offset>` instead of `--cron`. Delivery is `local` (no message), `demiurge` (Home), or `demiurge:<conversation id>`. Runs with nothing to say end with `[SILENT]`. Invalid declarations keep the last valid jobs and are logged.
 
-Record a schedule change request before applying it. The owner can change anything. The briefing hour and routines the owner asked for by name are the owner's; add those with `--owner`.
+Record a schedule change request before applying it. The owner can change anything; routines the owner asked for by name are the owner's, added with `--owner`.
 
-| Routine | Default local time | Skill or script | Delivery |
-| --- | --- | --- | --- |
-| session-export | 00:30 | `export-sessions.sh`, no agent | local |
-| context-refresh | hourly at :15 | `refresh.sh`, no agent | local |
-| attribution | 01:30 | brain-attribute | local |
-| sleep1 | 02:30 | brain-sleep1 | local |
-| rem | 03:30 | brain-rem | local |
-| sleep2 | 04:00 | brain-sleep2 | local |
-| people | 06:00 | brain-people | local |
-| prime | 06:30 | brain-prime | local |
-| improve | 07:00 | brain-improve | local |
-| morning | 08:00 | brain-morning | Home |
-| continue-daily | 12:00 | brain-continue, “Run continue daily.” | Home |
-| evening | 20:00 | brain-evening | Home |
-| watch | hourly at :00 | brain-watch | Home |
-| explore | 08:30–22:30, every two hours | brain-explore | Home |
-| continue | every thirty minutes | brain-continue | Home |
-
-Watch, continue and continue-daily use `watch-signal.sh`, `continue-signal.sh` and `continue-daily-signal.sh`. A model run happens only when its monitor's stdout changes; a failed monitor is an error. `brain install-scripts` installs all three. Recall governs conversations; setup handles requested changes. Core skills are re-rendered hourly; put this vault's additions under `## Local`.
+Watch and explore are gated by `watch-signal.sh` and `explore-signal.sh`, and the evening by `evening-signal.sh`: a model run happens only when the signal has something new; a failed monitor is an error. `brain install-scripts` installs them. Recall governs conversations; setup handles requested changes. Core skills are re-rendered hourly; put this vault's additions under `## Local`.
 
 ## Export, refresh and verification
 
@@ -87,4 +67,4 @@ Watch, continue and continue-daily use `watch-signal.sh`, `continue-signal.sh` a
 
 `context-refresh` runs `refresh.sh`: pull, sync people, compile `.context.md`, render skills, write health, and refresh the workspace's SOUL copy. It commits and pushes changed context or runtime files. The harness reads canonical SOUL directly. Version migrations run once as routines.
 
-After a night, `git log --oneline --since=yesterday` should show `archive`, `attribution`, `sleep1`, `rem` and `sleep2`, plus `context` when needed. `brain health` reports missing stages. Check the digest's turns and `reads:` lines. For missing runs, inspect `brain schedule list`, `brain validate`, the routines in Demiurge and `~/.harness/logs/<id>.log`; never repair the runtime's job store by hand.
+After a night, `git log --oneline --since=yesterday` should show `archive`, `attribution` and `sleep1`, plus `context` when needed. `brain health` reports missing stages. Check the digest's turns and `reads:` lines. For missing runs, inspect `brain schedule list`, `brain validate`, the routines in Demiurge and `~/.harness/logs/<id>.log`; never repair the runtime's job store by hand.
