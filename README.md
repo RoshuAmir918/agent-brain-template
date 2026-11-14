@@ -9,7 +9,7 @@ It follows the [LLM wiki](https://gist.github.com/karpathy/442a6bf555914893e9891
 - **Working memory backed by long-term memory.** Every session names the most active notes and what each holds. Everything else is one retrieval away.
 - **Decay that measures use.** The harness records tool calls, so the night sees which notes the agent opened and judges which it relied on. Notes you talk about stay hot; others fade to an index line, then to search-only. Nothing is deleted.
 - **Only surprises get written.** A fact the vault already states earns a use, not a copy. Your correction supersedes in place; an unverified conflict stays beside the original.
-- **Commitments that never decay.** “When X, do Y” lives in a pinned Triggers note until fulfilled or cancelled.
+- **Commitments that never decay.** Promises, answers owed and “when X, do Y” live in the Loops note until done or dropped.
 - **A night that does the housekeeping.** Export, attribute, consolidate, dream, audit. Each stage leaves a git commit.
 - **A day of routines.** Morning briefing, watch, people review, prime, improve, explore and evening. Most runs have nothing to send.
 - **Registries for people and other agents.** One sourced profile each, decaying like any note.
@@ -47,9 +47,11 @@ Use agent-brain 0.30 or newer. If `brain` is missing, check the install's execut
 
 Sign in for the model with `harness login --credential <model-credential>`. Store the Demiurge key with `harness set-key <agent-credential>`, supplying the key on stdin. The two credential names go in `credential` and `demiurge.credential`, respectively. Keep key values out of config, notes and command history.
 
-**4. Install the runtime files, then start the service.** In the vault repo, with `AGENT_HOME` set to that workspace and `VAULT_REPO` to this repo:
+**4. Install the runtime files, then start the service.** `editions/enterprise/` holds an organisation's notes, which `demiurge-admin intellect add` puts in place of the personal ones; a personal vault deletes it. In the vault repo, with `AGENT_HOME` set to that workspace and `VAULT_REPO` to this repo:
 
 ```sh
+rm -rf editions
+brain schedule init
 brain install-scripts
 brain install-skills
 brain compile-context --write
@@ -61,7 +63,7 @@ Have whoever runs the host start the per-agent launchd service `ai.demiurge.harn
 
 **5. Talk to the agent in Demiurge Home.** It follows `AGENTS.md`: asks its name and yours, your timezone and sleep hours, what you want it for, and how you like to be spoken to. It fills SOUL, your profile, Channels and a first conversation record, then sets the names, owner ids and timezone in `brain.toml`.
 
-The starter schedule is `memory/Runtime/schedule.toml`. Adjust it with `brain schedule set`, in your local hours. For example:
+`brain schedule init` writes the standard routines for this edition to `memory/Runtime/schedule.toml`. Adjust it with `brain schedule set`, in your local hours. For example:
 
 ```sh
 brain schedule set morning --cron "0 8 * * *" --skills brain-morning --prompt "Run the morning briefing." --deliver demiurge
