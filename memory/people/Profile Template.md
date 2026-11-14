@@ -2,10 +2,8 @@
 kind: orientation
 pinned: false
 tier: warm
-uses:
-- '2026-10-03'
+uses: []
 uses_inferred: []
-activation: -2.89
 ---
 # Person profile template
 
